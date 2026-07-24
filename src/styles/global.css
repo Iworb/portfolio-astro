@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+@layer reset, base, theme, utilities, components, overrides;
+
+@theme {
+  --font-sans: 'Geist', system-ui, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  --font-sans: 'GeistVariable', system-ui, sans-serif;
+}
+
+@plugin "daisyui" {
+  themes: day --default,
+  night --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: 'day';
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(97% 0.01 190);
+  --color-base-300: oklch(92% 0.02 190);
+  --color-base-content: oklch(25% 0.025 220);
+
+  --color-primary: oklch(62% 0.11 190);
+  --color-primary-content: oklch(98% 0.01 190);
+
+  --color-secondary: oklch(72% 0.09 155);
+  --color-secondary-content: oklch(22% 0.03 155);
+
+  --color-accent: oklch(74% 0.1 80);
+  --color-accent-content: oklch(25% 0.04 80);
+
+  --color-neutral: oklch(32% 0.025 220);
+  --color-neutral-content: oklch(98% 0.005 220);
+
+  --color-info: oklch(70% 0.12 230);
+  --color-success: oklch(68% 0.14 150);
+  --color-warning: oklch(80% 0.14 85);
+  --color-error: oklch(63% 0.2 25);
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: 'night';
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: oklch(24% 0.012 90);
+  --color-base-200: oklch(19% 0.01 90);
+  --color-base-300: oklch(31% 0.015 90);
+  --color-base-content: oklch(94% 0.01 270);
+
+  --color-primary: oklch(71% 0.18 285);
+  --color-primary-content: oklch(18% 0.04 285);
+
+  --color-secondary: oklch(72% 0.13 145);
+  --color-secondary-content: oklch(18% 0.04 145);
+
+  --color-accent: oklch(76% 0.14 95);
+  --color-accent-content: oklch(18% 0.04 95);
+
+  --color-neutral: oklch(25% 0.015 270);
+  --color-neutral-content: oklch(94% 0.01 270);
+
+  --color-info: oklch(75% 0.1 240);
+  --color-success: oklch(72% 0.14 145);
+  --color-warning: oklch(82% 0.14 85);
+  --color-error: oklch(68% 0.2 25);
+
+  --radius-selector: 9999px;
+  --radius-field: 0.75rem;
+  --radius-box: 0.875rem;
+
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 20rem;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@layer utilities {
+  .typography-eyebrow {
+    @apply font-sans text-xs/5 font-bold tracking-[.08em] uppercase;
+  }
+
+  .typography-heading {
+    font-size: clamp(2rem, 3.1vw, 2.75rem);
+    @apply font-sans font-semibold tracking-tighter leading-[1.15];
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply rounded-box border border-base-300 bg-base-100;
+  }
+
+  .bento-card-soft {
+    @apply rounded-box border border-base-300 bg-base-200;
+  }
+
+  .bento-placeholder {
+    @apply flex min-h-32 items-center justify-center rounded-box border border-dashed border-base-300;
+  }
+}

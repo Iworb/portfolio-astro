@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import type { Locale } from '../i18n/types';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Locale;
+}
+
+const {
+  title = 'Portfolio',
+  description = 'Frontend developer portfolio',
+  lang = 'en',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} data-theme="day">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="/">
+    <link rel="stylesheet" href="/fonts/geist/geist.css">
+
+    <title>{title}</title>
+
+    <script is:inline>
+      import { themeKey } from '../config/theme.ts';
+
+      const storedTheme = localStorage.getItem(themeKey);
+
+      if (storedTheme) {
+        document.documentElement.dataset.theme = storedTheme;
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.dataset.theme = 'night';
+      }
+    </script>
+  </head>
+
+  <body
+    class="flex h-screen flex-col overflow-hidden bg-base-200 text-base-content">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+    "schema_version": 2,
+    "commit": "d5d93d0e6c3add520611ac78c5c5a636e75ecfa7",
+    "indexed_at": "2026-07-20T15:46:26Z",
+    "project": "portfolio",
+    "nodes": 48,
+    "edges": 51,
+    "original_size": 1179648,
+    "compressed_size": 6245,
+    "compression_level": 9
+}

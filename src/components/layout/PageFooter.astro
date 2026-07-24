@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HomeI18n, Locale } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+  locale: Locale;
+}
+
+const { i18n: copy, locale } = Astro.props;
+---
+
+<footer class="border-t border-base-300 bg-base-100 px-4 py-6 sm:px-6 lg:px-7">
+  <div
+    class="mx-auto flex max-w-7xl flex-col gap-6
+      sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex items-center gap-4">
+      <a
+        href={`/${locale}`}
+        class="text-xl font-black tracking-tight text-base-content"
+        aria-label={copy.meta.title}>
+        OK
+      </a>
+
+      <div class="text-xs leading-5 text-base-content/60">
+        <p>{copy.footer.copyright}</p>
+        <p>{copy.footer.rights}</p>
+      </div>
+    </div>
+
+    <nav aria-label={copy.footer.social}>
+      <ul
+        class="flex flex-wrap items-center gap-5 text-xs font-medium text-base-content">
+        <li>
+          <a
+            href="https://github.com/oleksandr-koshevierov"
+            class="inline-flex items-center gap-2 transition-colors hover:text-primary"
+            target="_blank"
+            rel="noreferrer">
+            GitHub
+            <Icon name="lucide:github" class="size-4" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/oleksandr-koshevierov/"
+            class="inline-flex items-center gap-2 transition-colors hover:text-primary"
+            target="_blank"
+            rel="noreferrer">
+            LinkedIn
+            <Icon name="lucide:linkedin" class="size-4" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:hello@koshevierov.dev"
+            class="inline-flex items-center gap-2 transition-colors hover:text-primary">
+            Email
+            <Icon name="lucide:mail" class="size-4" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>

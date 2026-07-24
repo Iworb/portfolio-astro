@@ -1,0 +1,52 @@
+---
+import type { HomeI18n, Locale } from '../i18n/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './layout/Header.astro';
+import PageFooter from './layout/PageFooter.astro';
+import AboutCard from './portfolio/AboutCard.astro';
+import AvailabilityCard from './portfolio/AvailabilityCard.astro';
+import ContactCard from './portfolio/ContactCard.astro';
+import EducationCard from './portfolio/EducationCard.astro';
+import ExperienceCard from './portfolio/ExperienceCard.astro';
+import HeroCard from './portfolio/HeroCard.astro';
+import IndustriesCard from './portfolio/IndustriesCard.astro';
+import LanguagesCard from './portfolio/LanguagesCard.astro';
+import LocationCard from './portfolio/LocationCard.astro';
+import ProjectCard from './portfolio/ProjectCard.astro';
+import SelectedWorkCard from './portfolio/SelectedWorkCard.astro';
+import TechStackCard from './portfolio/TechStackCard.astro';
+
+interface Props {
+  i18n: HomeI18n;
+  locale: Locale;
+}
+
+const { i18n, locale } = Astro.props;
+---
+
+<BaseLayout
+  title={i18n.meta.title}
+  description={i18n.meta.description}
+  lang={locale}>
+  <Header i18n={i18n} locale={locale} />
+
+  <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+    <main
+      class="grid grid-cols-1 gap-3 bg-base-200 p-3 sm:gap-4 sm:p-4 lg:grid-cols-12 lg:p-5">
+      <HeroCard i18n={i18n} />
+      <ExperienceCard i18n={i18n} />
+      <AvailabilityCard i18n={i18n} />
+      <ProjectCard i18n={i18n} />
+      <TechStackCard i18n={i18n} />
+      <AboutCard i18n={i18n} />
+      <IndustriesCard i18n={i18n} />
+      <ContactCard i18n={i18n} />
+      <SelectedWorkCard i18n={i18n} />
+      <EducationCard i18n={i18n} />
+      <LanguagesCard i18n={i18n} />
+      <LocationCard i18n={i18n} />
+    </main>
+
+    <PageFooter i18n={i18n} locale={locale} />
+  </div>
+</BaseLayout>

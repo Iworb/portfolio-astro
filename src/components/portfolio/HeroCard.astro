@@ -1,0 +1,70 @@
+---
+import BentoCard from './BentoCard.astro';
+import type { HomeI18n } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+}
+
+const { i18n } = Astro.props;
+---
+
+<BentoCard
+  class="relative min-h-[18rem] overflow-hidden
+    sm:min-h-[19rem]
+    lg:min-h-[15rem]
+    lg:col-span-8 lg:row-span-2"
+  label={i18n.hero.label}>
+  <div
+    class="relative z-10 flex h-full flex-col items-start justify-between gap-8 lg:max-w-[58%]">
+    <div>
+      <p class="typography-eyebrow mb-3 text-primary">
+        {i18n.hero.label}
+      </p>
+
+      <h1 class="typography-heading max-w-[27rem] text-base-content">
+        {i18n.hero.title}
+      </h1>
+
+      <p class="type-body mt-4 max-w-[30rem] text-base-content/70">
+        {i18n.hero.description}
+      </p>
+    </div>
+
+    <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+      <a
+        href="#work"
+        class="btn btn-primary btn-sm min-w-32 text-xs font-semibold">
+        {i18n.hero.viewWork}
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <a
+        href={i18n.hero.cvLink}
+        download
+        class="btn btn-outline btn-sm min-w-32 text-xs font-semibold">
+        {i18n.hero.downloadCv}
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="pointer-events-none absolute -right-10 bottom-[-35%] hidden size-72 rounded-full bg-primary/15 blur-2xl lg:block"
+    aria-hidden="true">
+  </div>
+
+  <div
+    class="pointer-events-none absolute bottom-0 right-0 hidden h-[92%] w-[43%] lg:block"
+    aria-hidden="true">
+    <div class="absolute inset-x-5 bottom-0 h-3/4 rounded-t-full bg-primary/10">
+    </div>
+    <img
+      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=720&q=85"
+      alt=""
+      class="relative z-10 h-full w-full object-contain object-bottom"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+</BentoCard>

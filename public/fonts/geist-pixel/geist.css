@@ -1,0 +1,6 @@
+/* static fonts */
+@font-face { font-family: "GeistPixelCircle"; font-style: normal; font-weight: 400; font-display: swap; src: url("GeistPixel-Circle.woff2") format("woff2"); }
+@font-face { font-family: "GeistPixelGrid"; font-style: normal; font-weight: 400; font-display: swap; src: url("GeistPixel-Grid.woff2") format("woff2"); }
+@font-face { font-family: "GeistPixelLine"; font-style: normal; font-weight: 400; font-display: swap; src: url("GeistPixel-Line.woff2") format("woff2"); }
+@font-face { font-family: "GeistPixelSquare"; font-style: normal; font-weight: 400; font-display: swap; src: url("GeistPixel-Square.woff2") format("woff2"); }
+@font-face { font-family: "GeistPixelTriangle"; font-style: normal; font-weight: 400; font-display: swap; src: url("GeistPixel-Triangle.woff2") format("woff2"); }

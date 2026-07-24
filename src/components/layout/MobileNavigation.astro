@@ -1,0 +1,73 @@
+---
+import type { HomeI18n, Locale } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+  locale: Locale;
+}
+
+const { i18n: copy, locale } = Astro.props;
+---
+
+<div class="drawer drawer-end md:hidden">
+  <input id="mobile-navigation" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content"></div>
+
+  <div class="drawer-side z-[60]">
+    <label
+      for="mobile-navigation"
+      aria-label={copy.mobile.close}
+      class="drawer-overlay"></label>
+
+    <aside class="min-h-full w-80 max-w-[85vw] bg-base-100 p-5">
+      <div class="mb-8 flex items-center justify-between">
+        <a
+          href={`/${locale}`}
+          class="text-xl font-black tracking-tight"
+          aria-label={copy.meta.title}>OK</a
+        >
+        <label
+          for="mobile-navigation"
+          class="btn btn-square btn-ghost"
+          aria-label={copy.mobile.close}>
+          <span class="text-xl" aria-hidden="true">×</span>
+        </label>
+      </div>
+
+      <nav aria-label={copy.nav.work}>
+        <ul class="menu w-full gap-2 p-0">
+          <li>
+            <a href="#work" class="min-h-12 rounded-xl text-base"
+              >{copy.nav.work}</a
+            >
+          </li>
+          <li>
+            <a href="#experience" class="min-h-12 rounded-xl text-base"
+              >{copy.nav.experience}</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="min-h-12 rounded-xl text-base"
+              >{copy.nav.about}</a
+            >
+          </li>
+          <li>
+            <a href="#blog" class="min-h-12 rounded-xl text-base"
+              >{copy.nav.blog}</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="min-h-12 rounded-xl text-base"
+              >{copy.nav.contact}</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mt-8 border-t border-base-300 pt-6">
+        <p class="mb-3 text-sm text-base-content/60">{copy.mobile.available}</p>
+        <a href="#contact" class="btn btn-primary w-full">{copy.contact.cta}</a>
+      </div>
+    </aside>
+  </div>
+</div>

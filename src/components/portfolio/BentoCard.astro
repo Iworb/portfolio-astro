@@ -1,0 +1,17 @@
+---
+interface Props {
+  as?: 'article' | 'section' | 'aside';
+  class?: string;
+  id?: string;
+  label?: string;
+}
+
+const { as: Tag = 'section', class: className = '', id, label } = Astro.props;
+---
+
+<Tag
+  id={id}
+  class:list={['bento-card min-w-0 p-4 sm:p-5', className]}
+  aria-label={label}>
+  <slot />
+</Tag>

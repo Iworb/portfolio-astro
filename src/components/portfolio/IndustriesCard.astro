@@ -1,0 +1,48 @@
+---
+import BentoCard from './BentoCard.astro';
+import { Icon } from 'astro-icon/components';
+import type { HomeI18n } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+}
+
+const { i18n } = Astro.props;
+---
+
+<BentoCard
+  class="min-h-32 bg-primary/8
+    lg:col-span-9"
+  label={i18n.industries.label}>
+  <div class="flex h-full flex-col justify-between gap-5">
+    <h2 class="text-xs font-semibold text-primary">{i18n.industries.label}</h2>
+
+    <ul class="grid grid-cols-2 gap-5 sm:grid-cols-5 sm:gap-3">
+      <li
+        class="flex flex-col items-center gap-2 text-center text-xs text-base-content">
+        <Icon name="lucide:pickaxe" class="size-5" />
+        {i18n.industries.items[0]}
+      </li>
+      <li
+        class="flex flex-col items-center gap-2 text-center text-xs text-base-content">
+        <Icon name="lucide:factory" class="size-5" />
+        {i18n.industries.items[1]}
+      </li>
+      <li
+        class="flex flex-col items-center gap-2 text-center text-xs text-base-content">
+        <Icon name="lucide:shopping-bag" class="size-5" />
+        {i18n.industries.items[2]}
+      </li>
+      <li
+        class="flex flex-col items-center gap-2 text-center text-xs text-base-content">
+        <Icon name="lucide:waypoints" class="size-5" />
+        {i18n.industries.items[3]}
+      </li>
+      <li
+        class="flex flex-col items-center gap-2 text-center text-xs text-base-content">
+        <Icon name="lucide:heart-handshake" class="size-5" />
+        {i18n.industries.items[4]}
+      </li>
+    </ul>
+  </div>
+</BentoCard>

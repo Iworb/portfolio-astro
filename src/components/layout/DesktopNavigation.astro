@@ -1,0 +1,49 @@
+---
+import type { HomeI18n } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+}
+
+const { i18n: copy } = Astro.props;
+---
+
+<nav class="navbar-center hidden md:flex" aria-label={copy.nav.work}>
+  <ul class="menu menu-horizontal gap-1 px-1">
+    <li>
+      <a
+        href="#work"
+        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
+        >{copy.nav.work}</a
+      >
+    </li>
+    <li>
+      <a
+        href="#experience"
+        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
+        >{copy.nav.experience}</a
+      >
+    </li>
+    <li>
+      <a
+        href="#about"
+        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
+        >{copy.nav.about}</a
+      >
+    </li>
+    <li>
+      <a
+        href="#blog"
+        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
+        >{copy.nav.blog}</a
+      >
+    </li>
+    <li>
+      <a
+        href="#contact"
+        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
+        >{copy.nav.contact}</a
+      >
+    </li>
+  </ul>
+</nav>
