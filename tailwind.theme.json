@@ -1,0 +1,90 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "canvas-light": "#f4f5f2",
+        "surface-light": "#ffffff",
+        "ink-light": "#141614",
+        "muted-light": "#676b66",
+        "line-light": "#daddd7",
+        "canvas-dark": "#151714",
+        "surface-dark": "#1e211d",
+        "ink-dark": "#f2f5ed",
+        "muted-dark": "#a8ada3",
+        "line-dark": "#383d36",
+        "primary": "#d9ff4a",
+        "action-ink": "#171b15",
+        "supporting-light": "#27634d",
+        "supporting-dark": "#8ee3b3"
+      },
+      "fontFamily": {
+        "display": [
+          "Manrope"
+        ],
+        "heading-lg": [
+          "Manrope"
+        ],
+        "body-lg": [
+          "Manrope"
+        ],
+        "body-md": [
+          "Manrope"
+        ],
+        "label": [
+          "DM Mono"
+        ]
+      },
+      "fontSize": {
+        "display": [
+          "5.5rem",
+          {
+            "letterSpacing": "-0.075em",
+            "fontWeight": "700"
+          }
+        ],
+        "heading-lg": [
+          "2.25rem",
+          {
+            "letterSpacing": "-0.05em",
+            "fontWeight": "700"
+          }
+        ],
+        "body-lg": [
+          "1.0625rem",
+          {
+            "fontWeight": "400"
+          }
+        ],
+        "body-md": [
+          "0.875rem",
+          {
+            "fontWeight": "400"
+          }
+        ],
+        "label": [
+          "0.6875rem",
+          {
+            "letterSpacing": "0.08em",
+            "fontWeight": "500"
+          }
+        ]
+      },
+      "borderRadius": {
+        "control": "10px",
+        "card": "18px",
+        "pill": "999px"
+      },
+      "spacing": {
+        "1": "4px",
+        "2": "8px",
+        "3": "12px",
+        "4": "14px",
+        "5": "18px",
+        "6": "22px",
+        "7": "24px",
+        "8": "32px",
+        "9": "48px"
+      }
+    }
+  }
+}

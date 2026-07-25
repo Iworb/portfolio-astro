@@ -1,11 +1,11 @@
 {
     "schema_version": 2,
-    "commit": "d5d93d0e6c3add520611ac78c5c5a636e75ecfa7",
-    "indexed_at": "2026-07-20T15:46:26Z",
-    "project": "portfolio",
-    "nodes": 48,
-    "edges": 51,
+    "commit": "2371a5a510dad93cbc09892554352edfae7997fa",
+    "indexed_at": "2026-07-24T12:09:40Z",
+    "project": "home-vpadm-projects-portfolio-astro",
+    "nodes": 157,
+    "edges": 230,
     "original_size": 1179648,
-    "compressed_size": 6245,
+    "compressed_size": 46364,
     "compression_level": 9
 }

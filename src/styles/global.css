@@ -1,52 +1,76 @@
 @import 'tailwindcss';
+
 @layer reset, base, theme, utilities, components, overrides;
 
+/* Tailwind CSS v4 design tokens for Signal Bento. */
 @theme {
-  --font-sans: 'Geist', system-ui, sans-serif;
+  --font-sans: 'Manrope Static', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  --color-signal-canvas-day: #F4F5F2;
+  --color-signal-surface-day: #FFFFFF;
+  --color-signal-ink-day: #141614;
+  --color-signal-muted-day: #676B66;
+  --color-signal-line-day: #DADDD7;
+  --color-signal-canvas-night: #151714;
+  --color-signal-surface-night: #1E211D;
+  --color-signal-ink-night: #F2F5ED;
+  --color-signal-muted-night: #A8ADA3;
+  --color-signal-line-night: #383D36;
+  --color-signal-action: #D9FF4A;
+  --color-signal-action-ink: #171B15;
+  --color-signal-support-day: #27634D;
+  --color-signal-support-night: #8EE3B3;
+
+  --radius-signal-control: 0.625rem;
+  --radius-signal-card: 1.125rem;
+  --spacing-signal-grid: 0.875rem;
 }
 
+/* Modern browsers opt into the variable family; older browsers retain static weights. */
 @supports (font-variation-settings: normal) {
-  --font-sans: 'GeistVariable', system-ui, sans-serif;
+  :root {
+    --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
+  }
 }
 
 @plugin "daisyui" {
-  themes: day --default,
-  night --prefersdark;
+  themes: day --default, night --prefersdark;
 }
 
+/* The project keeps its existing `day` / `night` theme names. */
 @plugin "daisyui/theme" {
   name: 'day';
   default: true;
   color-scheme: light;
 
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: oklch(97% 0.01 190);
-  --color-base-300: oklch(92% 0.02 190);
-  --color-base-content: oklch(25% 0.025 220);
+  --color-base-100: #FFFFFF;
+  --color-base-200: #F4F5F2;
+  --color-base-300: #DADDD7;
+  --color-base-content: #141614;
 
-  --color-primary: oklch(62% 0.11 190);
-  --color-primary-content: oklch(98% 0.01 190);
+  --color-primary: #D9FF4A;
+  --color-primary-content: #171B15;
+  --color-secondary: #141614;
+  --color-secondary-content: #FFFFFF;
+  --color-accent: #27634D;
+  --color-accent-content: #FFFFFF;
+  --color-neutral: #141614;
+  --color-neutral-content: #F2F5ED;
+  --color-info: #80C5FF;
+  --color-info-content: #141614;
+  --color-success: #27634D;
+  --color-success-content: #FFFFFF;
+  --color-warning: #F2C66D;
+  --color-warning-content: #171B15;
+  --color-error: #C8504D;
+  --color-error-content: #FFFFFF;
 
-  --color-secondary: oklch(72% 0.09 155);
-  --color-secondary-content: oklch(22% 0.03 155);
-
-  --color-accent: oklch(74% 0.1 80);
-  --color-accent-content: oklch(25% 0.04 80);
-
-  --color-neutral: oklch(32% 0.025 220);
-  --color-neutral-content: oklch(98% 0.005 220);
-
-  --color-info: oklch(70% 0.12 230);
-  --color-success: oklch(68% 0.14 150);
-  --color-warning: oklch(80% 0.14 85);
-  --color-error: oklch(63% 0.2 25);
-
-  --radius-selector: 0.5rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.75rem;
-
+  --radius-selector: 9999px;
+  --radius-field: 0.625rem;
+  --radius-box: 1.125rem;
   --border: 1px;
-  --depth: 1;
+  --depth: 0;
   --noise: 0;
 }
 
@@ -55,32 +79,31 @@
   prefersdark: true;
   color-scheme: dark;
 
-  --color-base-100: oklch(24% 0.012 90);
-  --color-base-200: oklch(19% 0.01 90);
-  --color-base-300: oklch(31% 0.015 90);
-  --color-base-content: oklch(94% 0.01 270);
+  --color-base-100: #1E211D;
+  --color-base-200: #151714;
+  --color-base-300: #383D36;
+  --color-base-content: #F2F5ED;
 
-  --color-primary: oklch(71% 0.18 285);
-  --color-primary-content: oklch(18% 0.04 285);
-
-  --color-secondary: oklch(72% 0.13 145);
-  --color-secondary-content: oklch(18% 0.04 145);
-
-  --color-accent: oklch(76% 0.14 95);
-  --color-accent-content: oklch(18% 0.04 95);
-
-  --color-neutral: oklch(25% 0.015 270);
-  --color-neutral-content: oklch(94% 0.01 270);
-
-  --color-info: oklch(75% 0.1 240);
-  --color-success: oklch(72% 0.14 145);
-  --color-warning: oklch(82% 0.14 85);
-  --color-error: oklch(68% 0.2 25);
+  --color-primary: #D9FF4A;
+  --color-primary-content: #171B15;
+  --color-secondary: #F2F5ED;
+  --color-secondary-content: #1E211D;
+  --color-accent: #8EE3B3;
+  --color-accent-content: #141614;
+  --color-neutral: #141614;
+  --color-neutral-content: #F2F5ED;
+  --color-info: #9BCFFF;
+  --color-info-content: #141614;
+  --color-success: #8EE3B3;
+  --color-success-content: #141614;
+  --color-warning: #F4D27F;
+  --color-warning-content: #171B15;
+  --color-error: #F07B73;
+  --color-error-content: #171B15;
 
   --radius-selector: 9999px;
-  --radius-field: 0.75rem;
-  --radius-box: 0.875rem;
-
+  --radius-field: 0.625rem;
+  --radius-box: 1.125rem;
   --border: 1px;
   --depth: 0;
   --noise: 0;
@@ -95,18 +118,23 @@
     min-width: 20rem;
     font-family: var(--font-sans);
     font-size: 16px;
-    line-height: 1.25;
+    line-height: 1.5;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
   }
 }
 
 @layer utilities {
   .typography-eyebrow {
-    @apply font-sans text-xs/5 font-bold tracking-[.08em] uppercase;
+    @apply font-mono text-xs/5 font-medium tracking-[.08em] uppercase;
   }
 
   .typography-heading {
     font-size: clamp(2rem, 3.1vw, 2.75rem);
-    @apply font-sans font-semibold tracking-tighter leading-[1.15];
+    @apply font-sans font-bold tracking-tighter leading-[1.05];
   }
 }
 
