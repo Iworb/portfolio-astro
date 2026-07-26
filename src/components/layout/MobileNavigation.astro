@@ -23,8 +23,8 @@ const { i18n: copy, locale } = Astro.props;
       <div class="mb-8 flex items-center justify-between">
         <a
           href={`/${locale}`}
-          class="text-xl font-black tracking-tight"
-          aria-label={copy.meta.title}>OK</a
+          class="font-sans text-lg font-extrabold tracking-[-0.06em]"
+          aria-label={copy.meta.title}>O. Koshevierov</a
         >
         <label
           for="mobile-navigation"
@@ -37,27 +37,23 @@ const { i18n: copy, locale } = Astro.props;
       <nav aria-label={copy.nav.work}>
         <ul class="menu w-full gap-2 p-0">
           <li>
-            <a href="#work" class="min-h-12 rounded-xl text-base"
+            <a href={`/${locale}/work`} class="min-h-12 rounded-xl text-base"
               >{copy.nav.work}</a
             >
           </li>
           <li>
-            <a href="#experience" class="min-h-12 rounded-xl text-base"
-              >{copy.nav.experience}</a
+            <a
+              href={`/${locale}/experience`}
+              class="min-h-12 rounded-xl text-base">{copy.nav.experience}</a
             >
           </li>
           <li>
-            <a href="#about" class="min-h-12 rounded-xl text-base"
+            <a href={`/${locale}/about`} class="min-h-12 rounded-xl text-base"
               >{copy.nav.about}</a
             >
           </li>
           <li>
-            <a href="#blog" class="min-h-12 rounded-xl text-base"
-              >{copy.nav.blog}</a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="min-h-12 rounded-xl text-base"
+            <a href={`/${locale}/contact`} class="min-h-12 rounded-xl text-base"
               >{copy.nav.contact}</a
             >
           </li>
@@ -66,7 +62,9 @@ const { i18n: copy, locale } = Astro.props;
 
       <div class="mt-8 border-t border-base-300 pt-6">
         <p class="mb-3 text-sm text-base-content/60">{copy.mobile.available}</p>
-        <a href="#contact" class="btn btn-primary w-full">{copy.contact.cta}</a>
+        <a href={`/${locale}/contact`} class="btn btn-primary w-full"
+          >{copy.contact.cta}</a
+        >
       </div>
     </aside>
   </div>

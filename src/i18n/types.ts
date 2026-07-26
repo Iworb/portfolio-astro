@@ -7,6 +7,69 @@ export interface ProjectI18n {
   imageAlt: string;
 }
 
+export interface WorkProjectI18n {
+  slug: string;
+  eyebrow: string;
+  client: string;
+  title: string;
+  description: string;
+  tags: string[];
+  featured?: boolean;
+}
+
+export interface WorkI18n {
+  eyebrow: string;
+  title: string;
+  description: string;
+  count: string;
+  projects: WorkProjectI18n[];
+  detail: {
+    back: string;
+    view: string;
+    overview: string;
+    signals: string;
+    nda: string;
+  };
+  note: string;
+}
+
+export interface AboutPageI18n {
+  eyebrow: string;
+  status: string;
+  notice: string;
+  title: string;
+  description: string;
+  note: string;
+  prompts: string[];
+}
+
+export interface ExperienceAreaI18n {
+  title: string;
+  description: string;
+}
+
+export interface ExperiencePageI18n {
+  eyebrow: string;
+  title: string;
+  description: string;
+  practice: string;
+  areas: ExperienceAreaI18n[];
+  posture: string;
+  cv: string;
+}
+
+export interface ContactPageI18n {
+  eyebrow: string;
+  title: string;
+  description: string;
+  email: string;
+  linkedin: string;
+  practical: string;
+  location: string;
+  phone: string;
+  cv: string;
+}
+
 export interface HomeI18n {
   meta: { title: string; description: string };
   nav: {
@@ -16,6 +79,10 @@ export interface HomeI18n {
     blog: string;
     contact: string;
   };
+  work: WorkI18n;
+  aboutPage: AboutPageI18n;
+  experiencePage: ExperiencePageI18n;
+  contactPage: ContactPageI18n;
   language: {
     label: string;
     en: string;

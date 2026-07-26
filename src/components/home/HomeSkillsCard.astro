@@ -1,0 +1,30 @@
+---
+import type { HomeI18n } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+}
+
+const { i18n } = Astro.props;
+---
+
+<section
+  class="home-panel home-skills lg:col-span-4"
+  aria-labelledby="skills-title">
+  <p class="typography-eyebrow text-base-content/60">{i18n.tech.label}</p>
+  <h2
+    id="skills-title"
+    class="mt-5 max-w-sm text-3xl font-bold leading-[0.92] tracking-[-0.065em] text-base-content">
+    Architecture without unnecessary ceremony.
+  </h2>
+  <div class="mt-8 flex flex-wrap gap-x-3 gap-y-2">
+    {
+      i18n.tech.items.map((item, index) => (
+        <span class="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.06em] text-base-content/65">
+          {item}
+          {index < i18n.tech.items.length - 1 ? ' /' : ''}
+        </span>
+      ))
+    }
+  </div>
+</section>

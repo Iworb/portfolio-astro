@@ -1,0 +1,100 @@
+---
+import type { HomeI18n, Locale } from '../i18n/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './layout/Header.astro';
+import PageFooter from './layout/PageFooter.astro';
+interface Props {
+  i18n: HomeI18n;
+  locale: Locale;
+}
+const { i18n, locale } = Astro.props;
+const contact = i18n.contactPage;
+const email = 'iworb.ne@gmail.com';
+const phone = '+49 151 72585876';
+---
+
+<BaseLayout
+  title={`${i18n.nav.contact} — ${i18n.meta.title}`}
+  description={contact.description}
+  lang={locale}>
+  <Header
+    i18n={i18n}
+    locale={locale}
+    currentPage="contact"
+    pathSuffix="/contact"
+  />
+  <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+    <main
+      class="mx-auto max-w-[90rem] px-3 py-8 sm:px-5 sm:py-12 lg:px-6 lg:py-16">
+      <section
+        class="grid gap-8 border-b border-base-300 pb-12 lg:grid-cols-12 lg:items-end lg:pb-16">
+        <div class="lg:col-span-8">
+          <p class="typography-eyebrow text-base-content/60">
+            {contact.eyebrow}
+          </p><h1
+            class="mt-6 text-balance font-sans text-5xl font-bold leading-[0.86] tracking-[-0.08em] sm:text-6xl lg:text-7xl">
+            {contact.title}
+          </h1>
+        </div><p
+          class="max-w-lg text-lg leading-8 text-base-content/70 lg:col-span-4">
+          {contact.description}
+        </p>
+      </section>
+      <section class="mt-3 grid gap-3 lg:grid-cols-12">
+        <a
+          href={`mailto:${email}?subject=Portfolio%20enquiry`}
+          class="contact-primary lg:col-span-8 lg:p-10"
+          ><p class="typography-eyebrow text-[color:#171B15]/70">
+            01 / Email
+          </p><h2
+            class="mt-12 text-4xl font-bold leading-[0.9] tracking-[-0.07em] text-[color:#171B15]">
+            {contact.email}
+          </h2><p
+            class="mt-auto border-t border-[color:#171B15]/20 pt-5 text-xl font-semibold tracking-[-0.04em] text-[color:#171B15]">
+            {email}
+            <span aria-hidden="true">↗</span>
+          </p></a
+        ><a
+          href="https://www.linkedin.com/in/oleksandr-k-74266212b/"
+          target="_blank"
+          rel="noreferrer"
+          class="contact-card lg:col-span-4 lg:p-10"
+          ><p class="typography-eyebrow text-base-content/60">
+            02 / LinkedIn
+          </p><h2
+            class="mt-12 text-3xl font-bold leading-[0.92] tracking-[-0.065em]">
+            {contact.linkedin}
+          </h2><p
+            class="mt-auto border-t border-base-300 pt-5 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-base-content/65">
+            Open LinkedIn <span aria-hidden="true">↗</span>
+          </p></a>
+      </section>
+      <section class="mt-3 grid gap-3 lg:grid-cols-3">
+        <article class="contact-card lg:p-8">
+          <p class="typography-eyebrow text-base-content/60">
+            Location & format
+          </p><p class="mt-10 text-base leading-7 text-base-content/75">
+            {contact.location}
+          </p>
+        </article><a href="tel:+4915172585876" class="contact-card lg:p-8"
+          ><p class="typography-eyebrow text-base-content/60">Phone</p><p
+            class="mt-10 text-xl font-semibold tracking-[-0.04em]">
+            {phone}
+          </p><p
+            class="mt-4 font-mono text-[0.6875rem] uppercase tracking-[0.08em] text-base-content/60">
+            {contact.phone} ↗
+          </p></a
+        ><article class="contact-card lg:p-8">
+          <p class="typography-eyebrow text-base-content/60">Résumé</p><p
+            class="mt-10 text-base leading-7 text-base-content/75">
+            {contact.cv}
+          </p><a
+            href={i18n.hero.cvLink}
+            download
+            class="mt-5 inline-flex min-h-11 items-center font-mono text-[0.6875rem] uppercase tracking-[0.08em] underline underline-offset-4"
+            >{i18n.hero.downloadCv} ↓</a>
+        </article>
+      </section>
+    </main><PageFooter i18n={i18n} locale={locale} />
+  </div>
+</BaseLayout>

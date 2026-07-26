@@ -1,0 +1,38 @@
+---
+import type { HomeI18n } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+}
+
+const { i18n } = Astro.props;
+---
+
+<section
+  id="about"
+  class="home-panel lg:col-span-8"
+  aria-labelledby="approach-title">
+  <div
+    class="grid h-full gap-8 lg:grid-cols-[minmax(0,1fr)_12rem] lg:items-end">
+    <div>
+      <p class="typography-eyebrow text-base-content/60">How I work</p>
+      <h2
+        id="approach-title"
+        class="mt-5 max-w-2xl text-4xl font-bold leading-[0.9] tracking-[-0.07em] text-base-content sm:text-5xl">
+        Complexity deserves a calm interface and a calm delivery process.
+      </h2>
+      <p
+        class="mt-6 max-w-xl text-sm leading-6 text-base-content/70 sm:text-base">
+        {i18n.about.description}
+      </p>
+    </div>
+    <a
+      href="#contact"
+      class="group inline-flex min-h-12 items-center justify-between rounded-[0.625rem] border border-base-300 px-4 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-base-content transition-colors hover:border-base-content hover:bg-base-content hover:text-base-100">
+      {i18n.contact.cta}<span
+        class="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+        >↗</span
+      >
+    </a>
+  </div>
+</section>

@@ -1,48 +1,48 @@
 ---
-import type { HomeI18n } from '../../i18n/types';
+import type { HomeI18n, Locale } from '../../i18n/types';
 
 interface Props {
   i18n: HomeI18n;
+  locale: Locale;
+  currentPage?: 'home' | 'work' | 'about' | 'experience' | 'contact';
 }
 
-const { i18n: copy } = Astro.props;
+const { i18n: copy, locale, currentPage = 'home' } = Astro.props;
+const home = `/${locale}`;
 ---
 
-<nav class="navbar-center hidden md:flex" aria-label={copy.nav.work}>
-  <ul class="menu menu-horizontal gap-1 px-1">
+<nav class="hidden flex-1 justify-center lg:flex" aria-label={copy.nav.work}>
+  <ul class="flex items-center gap-1">
     <li>
       <a
-        href="#work"
-        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
+        href={`${home}/work`}
+        class:list={['nav-link', currentPage === 'work' && 'nav-link-active']}
         >{copy.nav.work}</a
       >
     </li>
     <li>
       <a
-        href="#experience"
-        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
-        >{copy.nav.experience}</a
+        href={`${home}/experience`}
+        class:list={[
+          'nav-link',
+          currentPage === 'experience' && 'nav-link-active',
+        ]}>{copy.nav.experience}</a
       >
     </li>
     <li>
       <a
-        href="#about"
-        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
+        href={`${home}/about`}
+        class:list={['nav-link', currentPage === 'about' && 'nav-link-active']}
         >{copy.nav.about}</a
       >
     </li>
     <li>
       <a
-        href="#blog"
-        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
-        >{copy.nav.blog}</a
-      >
-    </li>
-    <li>
-      <a
-        href="#contact"
-        class="rounded-lg px-4 py-2 transition-colors hover:bg-base-200"
-        >{copy.nav.contact}</a
+        href={`${home}/contact`}
+        class:list={[
+          'nav-link',
+          currentPage === 'contact' && 'nav-link-active',
+        ]}>{copy.nav.contact}</a
       >
     </li>
   </ul>

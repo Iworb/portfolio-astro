@@ -1,0 +1,14 @@
+---
+import SystemPage from '../../components/SystemPage.astro';
+import { en } from '../../i18n/en';
+
+export function getStaticPaths() {
+  return en.work.projects.map(project => ({
+    params: { system: project.slug },
+  }));
+}
+
+const { system } = Astro.params;
+---
+
+<SystemPage i18n={en} locale="en" slug={system!} />

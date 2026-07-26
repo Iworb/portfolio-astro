@@ -9,24 +9,37 @@ import type { HomeI18n, Locale } from '../../i18n/types';
 interface Props {
   i18n: HomeI18n;
   locale: Locale;
+  currentPage?: 'home' | 'work' | 'about' | 'experience' | 'contact';
+  pathSuffix?: string;
 }
 
-const { i18n: copy, locale } = Astro.props;
+const { i18n: copy, locale, currentPage = 'home', pathSuffix } = Astro.props;
+const languagePath =
+  pathSuffix ??
+  (currentPage === 'work'
+    ? '/work'
+    : currentPage === 'about'
+      ? '/about'
+      : currentPage === 'experience'
+        ? '/experience'
+        : currentPage === 'contact'
+          ? '/contact'
+          : '');
 ---
 
 <header
-  class="sticky top-0 z-50 shrink-0 border-b border-base-300 bg-base-100/90 backdrop-blur">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="navbar min-h-16 px-0">
-      <!-- Mobile menu button -->
-      <div class="navbar-start md:hidden">
+  class="sticky top-0 z-50 shrink-0 border-b border-base-300 bg-base-200/95 backdrop-blur-sm">
+  <div
+    class="mx-auto flex h-18 max-w-[90rem] items-center gap-3 px-3 sm:px-5 lg:px-6">
+    <div class="flex flex-1 items-center lg:flex-none">
+      <div class="lg:hidden">
         <label
           for="mobile-navigation"
-          class="btn btn-square btn-ghost"
+          class="inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-base-300 bg-base-100 text-base-content transition-colors hover:border-base-content/60"
           aria-label={copy.mobile.open}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="size-6"
+            class="size-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -35,35 +48,34 @@ const { i18n: copy, locale } = Astro.props;
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+              d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
         </label>
       </div>
 
-      <!-- Logo -->
-      <div class="navbar-center md:navbar-start">
-        <a
-          href={`/${locale}`}
-          class="text-xl font-black tracking-tight"
-          aria-label={copy.meta.title}>
-          OK
-        </a>
-      </div>
+      <a
+        href={`/${locale}`}
+        class="ml-3 font-sans text-[1.05rem] font-extrabold tracking-[-0.06em] text-base-content lg:ml-0"
+        aria-label={copy.meta.title}>
+        O. Koshevierov
+      </a>
+    </div>
 
-      <!-- Desktop navigation -->
-      <DesktopNavigation i18n={copy} />
+    <DesktopNavigation i18n={copy} locale={locale} currentPage={currentPage} />
 
-      <!-- Controls -->
-      <div class="navbar-end gap-1">
-        <ThemeSwitcher client:load>
-          <Icon slot="sun" name="lucide:sun" class="size-5 fill-current" />
-          <Icon slot="moon" name="lucide:moon" class="size-5 fill-current" />
-        </ThemeSwitcher>
+    <div class="flex flex-1 items-center justify-end gap-2 lg:flex-none">
+      <LanguageSwitcher
+        client:load
+        locale={locale}
+        labels={copy.language}
+        pathSuffix={languagePath}>
+        <Icon slot="chevron" name="lucide:chevron-down" class="size-3.5" />
+      </LanguageSwitcher>
 
-        <LanguageSwitcher client:load locale={locale} labels={copy.language}>
-          <Icon slot="chevron" name="lucide:chevron-down" class="size-4" />
-        </LanguageSwitcher>
-      </div>
+      <ThemeSwitcher client:load>
+        <Icon slot="sun" name="lucide:sun" class="size-4" />
+        <Icon slot="moon" name="lucide:moon" class="size-4" />
+      </ThemeSwitcher>
     </div>
   </div>
 </header>

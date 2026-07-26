@@ -1,0 +1,84 @@
+---
+import type { HomeI18n, Locale } from '../i18n/types';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './layout/Header.astro';
+import PageFooter from './layout/PageFooter.astro';
+
+interface Props {
+  i18n: HomeI18n;
+  locale: Locale;
+}
+
+const { i18n, locale } = Astro.props;
+const about = i18n.aboutPage;
+---
+
+<BaseLayout
+  title={`${i18n.nav.about} — ${i18n.meta.title}`}
+  description={about.description}
+  lang={locale}>
+  <Header i18n={i18n} locale={locale} currentPage="about" pathSuffix="/about" />
+
+  <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+    <main
+      class="mx-auto max-w-[90rem] px-3 py-8 sm:px-5 sm:py-12 lg:px-6 lg:py-16">
+      <section class="grid gap-3 lg:grid-cols-12">
+        <div class="about-panel min-h-[31rem] lg:col-span-8 lg:p-10">
+          <p class="typography-eyebrow text-base-content/60">{about.eyebrow}</p>
+          <h1
+            class="mt-8 max-w-4xl text-balance font-sans text-5xl font-bold leading-[0.86] tracking-[-0.08em] text-base-content sm:text-6xl lg:text-7xl">
+            {about.title}
+          </h1>
+          <p
+            class="mt-8 max-w-2xl text-pretty text-lg leading-8 text-base-content/70">
+            {about.description}
+          </p>
+        </div>
+
+        <aside class="about-panel about-placeholder lg:col-span-4 lg:p-10">
+          <p class="typography-eyebrow text-[color:#171B15]/70">
+            {about.status}
+          </p>
+          <div class="mt-auto border-t border-[color:#171B15]/20 pt-5">
+            <p
+              class="text-xl font-semibold leading-[1.1] tracking-[-0.04em] text-[color:#171B15]">
+              {about.notice}
+            </p>
+          </div>
+        </aside>
+
+        <section
+          class="about-panel lg:col-span-7 lg:p-10"
+          aria-label={about.eyebrow}>
+          <p class="typography-eyebrow text-base-content/60">
+            Personal page / pending
+          </p>
+          <p
+            class="mt-12 max-w-3xl text-2xl font-medium leading-[1.2] tracking-[-0.045em] text-base-content sm:text-3xl">
+            {about.note}
+          </p>
+        </section>
+
+        <aside class="about-panel lg:col-span-5 lg:p-10">
+          <p class="typography-eyebrow text-base-content/60">
+            Prompts, not a bio
+          </p>
+          <ul class="mt-9 grid gap-3">
+            {
+              about.prompts.map((prompt, index) => (
+                <li class="flex items-center gap-3 border-t border-base-300 pt-3 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-base-content/65">
+                  <span class="text-primary">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  {prompt}
+                </li>
+              ))
+            }
+          </ul>
+        </aside>
+      </section>
+    </main>
+
+    <PageFooter i18n={i18n} locale={locale} />
+  </div>
+</BaseLayout>

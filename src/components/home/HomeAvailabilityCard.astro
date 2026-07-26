@@ -1,0 +1,41 @@
+---
+import type { HomeI18n } from '../../i18n/types';
+
+interface Props {
+  i18n: HomeI18n;
+}
+
+const { i18n } = Astro.props;
+---
+
+<aside
+  class="home-panel home-availability lg:col-span-4"
+  aria-label={i18n.availability.label}>
+  <div class="flex h-full flex-col justify-between gap-12">
+    <div class="flex items-center justify-between gap-3">
+      <p class="typography-eyebrow text-[color:#171B15]/70">
+        {i18n.availability.label}
+      </p>
+      <span
+        class="flex size-3 items-center justify-center rounded-full bg-[color:#171B15]"
+        aria-label={i18n.availability.current}>
+        <span class="size-1.5 rounded-full bg-primary"></span>
+      </span>
+    </div>
+
+    <div>
+      <h2
+        class="max-w-sm text-4xl font-bold leading-[0.9] tracking-[-0.07em] text-[color:#171B15]">
+        {i18n.availability.title}
+      </h2>
+      <p class="mt-5 max-w-xs text-sm leading-6 text-[color:#171B15]/75">
+        {i18n.availability.schedule}<br />{i18n.availability.location}
+      </p>
+    </div>
+
+    <p
+      class="font-mono text-[0.625rem] font-medium uppercase tracking-[0.12em] text-[color:#171B15]/70">
+      Open for the right build
+    </p>
+  </div>
+</aside>
