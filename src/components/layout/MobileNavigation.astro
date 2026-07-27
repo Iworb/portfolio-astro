@@ -1,12 +1,13 @@
 ---
-import type { HomeI18n, Locale } from '../../i18n/types';
+import type { Locale } from '../../i18n/types';
+import type {I18n} from "../../models";
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
   locale: Locale;
 }
 
-const { i18n: copy, locale } = Astro.props;
+const { i18n, locale } = Astro.props;
 ---
 
 <div class="drawer drawer-end md:hidden">
@@ -16,7 +17,7 @@ const { i18n: copy, locale } = Astro.props;
   <div class="drawer-side z-[60]">
     <label
       for="mobile-navigation"
-      aria-label={copy.mobile.close}
+      aria-label={i18n.nav.header.aria.close}
       class="drawer-overlay"></label>
 
     <aside class="min-h-full w-80 max-w-[85vw] bg-base-100 p-5">
@@ -24,46 +25,46 @@ const { i18n: copy, locale } = Astro.props;
         <a
           href={`/${locale}`}
           class="font-sans text-lg font-extrabold tracking-[-0.06em]"
-          aria-label={copy.meta.title}>O. Koshevierov</a
+          aria-label={i18n.meta.title}>{i18n.nav.header.name}</a
         >
         <label
           for="mobile-navigation"
           class="btn btn-square btn-ghost"
-          aria-label={copy.mobile.close}>
+          aria-label={i18n.nav.header.aria.close}>
           <span class="text-xl" aria-hidden="true">×</span>
         </label>
       </div>
 
-      <nav aria-label={copy.nav.work}>
+      <nav aria-label={i18n.nav.header.work}>
         <ul class="menu w-full gap-2 p-0">
           <li>
             <a href={`/${locale}/work`} class="min-h-12 rounded-xl text-base"
-              >{copy.nav.work}</a
+              >{i18n.nav.header.work}</a
             >
           </li>
           <li>
             <a
               href={`/${locale}/experience`}
-              class="min-h-12 rounded-xl text-base">{copy.nav.experience}</a
+              class="min-h-12 rounded-xl text-base">{i18n.nav.header.experience}</a
             >
           </li>
           <li>
             <a href={`/${locale}/about`} class="min-h-12 rounded-xl text-base"
-              >{copy.nav.about}</a
+              >{i18n.nav.header.about}</a
             >
           </li>
           <li>
             <a href={`/${locale}/contact`} class="min-h-12 rounded-xl text-base"
-              >{copy.nav.contact}</a
+              >{i18n.nav.header.contact}</a
             >
           </li>
         </ul>
       </nav>
 
       <div class="mt-8 border-t border-base-300 pt-6">
-        <p class="mb-3 text-sm text-base-content/60">{copy.mobile.available}</p>
+        <p class="mb-3 text-sm text-base-content/60">{i18n.nav.header.available}</p>
         <a href={`/${locale}/contact`} class="btn btn-primary w-full"
-          >{copy.contact.cta}</a
+          >{i18n.nav.header.cta}</a
         >
       </div>
     </aside>

@@ -1,12 +1,14 @@
 ---
-import type { HomeI18n, Locale } from '../../i18n/types';
+import type { Locale } from '../../i18n/types';
+import type { I18n } from '../../models';
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
   locale: Locale;
 }
 
 const { i18n, locale } = Astro.props;
+const hero = i18n.pages.home.hero;
 ---
 
 <section
@@ -15,29 +17,29 @@ const { i18n, locale } = Astro.props;
   <div
     class="relative z-10 flex h-full max-w-3xl flex-col justify-between gap-12">
     <div>
-      <p class="typography-eyebrow text-base-content/60">{i18n.hero.label}</p>
+      <p class="typography-eyebrow text-base-content/60">{hero.label}</p>
       <h1
         id="home-title"
         class="mt-5 max-w-3xl text-balance font-sans text-5xl font-bold leading-[0.86] tracking-[-0.08em] text-base-content sm:text-6xl lg:text-7xl">
-        {i18n.hero.title}
+        {hero.title}
       </h1>
       <p
         class="mt-6 max-w-xl text-pretty text-base leading-7 text-base-content/70 sm:text-lg">
-        {i18n.hero.description}
+        {hero.description}
       </p>
     </div>
 
     <div class="flex flex-col gap-3 sm:flex-row">
       <a
-        href={i18n.hero.cvLink}
+        href={hero.cvLink}
         download
         class="btn btn-primary min-h-11 rounded-[0.625rem] px-5 font-semibold">
-        {i18n.hero.downloadCv}<span aria-hidden="true">↓</span>
+        {hero.downloadCv}<span aria-hidden="true">↓</span>
       </a>
       <a
         href={`/${locale}/contact`}
         class="btn btn-outline min-h-11 rounded-[0.625rem] px-5 font-semibold">
-        {i18n.contact.cta}<span aria-hidden="true">↗</span>
+        {hero.cta}<span aria-hidden="true">↗</span>
       </a>
     </div>
   </div>

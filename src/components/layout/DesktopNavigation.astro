@@ -1,23 +1,24 @@
 ---
-import type { HomeI18n, Locale } from '../../i18n/types';
+import type {Locale} from '../../i18n/types';
+import type {I18n} from "../../models";
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
   locale: Locale;
   currentPage?: 'home' | 'work' | 'about' | 'experience' | 'contact';
 }
 
-const { i18n: copy, locale, currentPage = 'home' } = Astro.props;
+const {i18n, locale, currentPage = 'home'} = Astro.props;
 const home = `/${locale}`;
 ---
 
-<nav class="hidden flex-1 justify-center lg:flex" aria-label={copy.nav.work}>
+<nav class="hidden flex-1 justify-center lg:flex" aria-label={i18n.nav.header.work}>
   <ul class="flex items-center gap-1">
     <li>
       <a
         href={`${home}/work`}
         class:list={['nav-link', currentPage === 'work' && 'nav-link-active']}
-        >{copy.nav.work}</a
+      >{i18n.nav.header.work}</a
       >
     </li>
     <li>
@@ -26,14 +27,14 @@ const home = `/${locale}`;
         class:list={[
           'nav-link',
           currentPage === 'experience' && 'nav-link-active',
-        ]}>{copy.nav.experience}</a
+        ]}>{i18n.nav.header.experience}</a
       >
     </li>
     <li>
       <a
         href={`${home}/about`}
         class:list={['nav-link', currentPage === 'about' && 'nav-link-active']}
-        >{copy.nav.about}</a
+      >{i18n.nav.header.about}</a
       >
     </li>
     <li>
@@ -42,7 +43,7 @@ const home = `/${locale}`;
         class:list={[
           'nav-link',
           currentPage === 'contact' && 'nav-link-active',
-        ]}>{copy.nav.contact}</a
+        ]}>{i18n.nav.header.contact}</a
       >
     </li>
   </ul>

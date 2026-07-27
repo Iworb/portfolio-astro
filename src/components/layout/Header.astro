@@ -4,10 +4,11 @@ import DesktopNavigation from './DesktopNavigation.astro';
 import ThemeSwitcher from '../islands/ThemeSwitcher';
 import LanguageSwitcher from '../islands/LanguageSwitcher';
 import MobileNavigation from './MobileNavigation.astro';
-import type { HomeI18n, Locale } from '../../i18n/types';
+import type { Locale } from '../../i18n/types';
+import type {I18n} from "../../models";
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
   locale: Locale;
   currentPage?: 'home' | 'work' | 'about' | 'experience' | 'contact';
   pathSuffix?: string;
@@ -36,7 +37,7 @@ const languagePath =
         <label
           for="mobile-navigation"
           class="inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-base-300 bg-base-100 text-base-content transition-colors hover:border-base-content/60"
-          aria-label={i18n.mobile.open}>
+          aria-label={i18n.nav.header.aria.open}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="size-4"
@@ -57,7 +58,7 @@ const languagePath =
         href={`/${locale}`}
         class="ml-3 font-sans text-[1.05rem] font-extrabold tracking-[-0.06em] text-base-content lg:ml-0"
         aria-label={i18n.meta.title}>
-        O. Koshevierov
+        {i18n.nav.header.name}
       </a>
     </div>
 
@@ -67,7 +68,7 @@ const languagePath =
       <LanguageSwitcher
         client:load
         locale={locale}
-        labels={i18n.language}
+        i18n={i18n}
         pathSuffix={languagePath}>
         <Icon slot="chevron" name="lucide:chevron-down" class="size-3.5" />
       </LanguageSwitcher>

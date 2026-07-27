@@ -1,21 +1,26 @@
 ---
 import '../styles/global.css';
-import type { Locale, ProjectI18n } from '../i18n/types';
+import type { Locale } from '../i18n/types';
+import type { I18n } from '../models';
 import Header from '../components/layout/Header.astro';
 import PageFooter from '../components/layout/PageFooter.astro';
 
 interface Props {
   title?: string;
   description?: string;
-  i18n?: ProjectI18n;
-  locale?: Locale;
+  i18n: I18n;
+  locale: Locale;
+  currentPage?: 'home' | 'work' | 'about' | 'experience' | 'contact';
+  pathSuffix?: string;
 }
 
 const {
   title = 'Portfolio',
   description = 'Frontend developer portfolio',
-  i18n = {},
-  locale = 'en',
+  i18n,
+  locale,
+  currentPage = 'home',
+  pathSuffix,
 } = Astro.props;
 ---
 
@@ -48,7 +53,12 @@ const {
 
   <body
     class="flex h-screen flex-col overflow-hidden bg-base-200 text-base-content">
-    <Header i18n={i18n} locale={locale} />
+    <Header
+      i18n={i18n}
+      locale={locale}
+      currentPage={currentPage}
+      pathSuffix={pathSuffix}
+    />
     <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain">
       <main class="p-3 sm:p-5 lg:p-7">
         <slot />

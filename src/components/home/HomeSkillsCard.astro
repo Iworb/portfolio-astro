@@ -1,12 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
-import type { HomeI18n } from '../../i18n/types';
+import type { I18n } from '../../models';
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
 }
 
 const { i18n } = Astro.props;
+const skills = i18n.pages.home.skills;
 ---
 
 <section
@@ -15,17 +16,17 @@ const { i18n } = Astro.props;
   <div class="flex flex-col gap-10">
     <div
       class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:items-end">
-      <p class="typography-eyebrow text-base-content/60">{i18n.tech.label}</p>
+      <p class="typography-eyebrow text-base-content/60">{skills.label}</p>
       <h2
         id="skills-title"
         class="max-w-xl text-3xl font-bold leading-[0.92] tracking-[-0.065em] text-base-content">
-        {i18n.tech.title}
+        {skills.title}
       </h2>
     </div>
 
     <div class="grid gap-x-6 gap-y-7 sm:grid-cols-2 xl:grid-cols-3">
       {
-        i18n.tech.groups.map(group => (
+        skills.groups.map(group => (
           <section class="border-t border-base-300 pt-4">
             <div class="flex items-center gap-2 text-base-content">
               <Icon

@@ -1,55 +1,55 @@
 ---
-import type { HomeI18n, Locale } from '../i18n/types';
+import type { Locale } from '../i18n/types';
+import type { I18n } from '../models';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from './layout/Header.astro';
-import PageFooter from './layout/PageFooter.astro';
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
   locale: Locale;
 }
 
 const { i18n, locale } = Astro.props;
-const about = i18n.aboutPage;
+const about = i18n.pages.about;
 ---
 
 <BaseLayout
-  title={`${i18n.nav.about} — ${i18n.meta.title}`}
-  description={about.description}
-  lang={locale}>
-  <Header i18n={i18n} locale={locale} currentPage="about" pathSuffix="/about" />
+   title={`${i18n.nav.header.about} — ${i18n.meta.title}`}
+   description={about.hero.description}
+   i18n={i18n}
+   currentPage="about"
+   pathSuffix="/about"
+   locale={locale}>
 
-  <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain">
     <main
       class="mx-auto max-w-[90rem] px-3 py-8 sm:px-5 sm:py-12 lg:px-6 lg:py-16">
       <section class="grid gap-3 lg:grid-cols-12">
         <div class="about-panel min-h-[31rem] lg:col-span-8 lg:p-10">
-          <p class="typography-eyebrow text-base-content/60">{about.eyebrow}</p>
+          <p class="typography-eyebrow text-base-content/60">{about.hero.eyebrow}</p>
           <h1
             class="mt-8 max-w-4xl text-balance font-sans text-5xl font-bold leading-[0.86] tracking-[-0.08em] text-base-content sm:text-6xl lg:text-7xl">
-            {about.title}
+            {about.hero.title}
           </h1>
           <p
             class="mt-8 max-w-2xl text-pretty text-lg leading-8 text-base-content/70">
-            {about.description}
+            {about.hero.description}
           </p>
         </div>
 
         <aside class="about-panel about-placeholder lg:col-span-4 lg:p-10">
           <p class="typography-eyebrow text-[color:#171B15]/70">
-            {about.status}
+            {about.placeholder.status}
           </p>
           <div class="mt-auto border-t border-[color:#171B15]/20 pt-5">
             <p
               class="text-xl font-semibold leading-[1.1] tracking-[-0.04em] text-[color:#171B15]">
-              {about.notice}
+              {about.placeholder.notice}
             </p>
           </div>
         </aside>
 
         <section
           class="about-panel lg:col-span-7 lg:p-10"
-          aria-label={about.eyebrow}>
+          aria-label={about.hero.eyebrow}>
           <p class="typography-eyebrow text-base-content/60">
             Personal page / pending
           </p>
@@ -78,7 +78,4 @@ const about = i18n.aboutPage;
         </aside>
       </section>
     </main>
-
-    <PageFooter i18n={i18n} locale={locale} />
-  </div>
 </BaseLayout>

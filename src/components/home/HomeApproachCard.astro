@@ -1,11 +1,12 @@
 ---
-import type { HomeI18n } from '../../i18n/types';
+import type { I18n } from '../../models';
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
 }
 
 const { i18n } = Astro.props;
+const approach = i18n.pages.home.approach;
 ---
 
 <section
@@ -14,21 +15,21 @@ const { i18n } = Astro.props;
   aria-labelledby="approach-title">
   <div class="flex h-full flex-col justify-between gap-8">
     <div>
-      <p class="typography-eyebrow text-base-content/60">How I work</p>
+       <p class="typography-eyebrow text-base-content/60">{approach.label}</p>
       <h2
         id="approach-title"
         class="mt-5 max-w-2xl text-3xl font-bold leading-[0.96] tracking-[-0.06em] text-base-content sm:text-4xl">
-        Complexity deserves a calm interface and a calm delivery process.
+         {approach.title}
       </h2>
       <p
         class="mt-6 max-w-xl text-sm leading-6 text-base-content/70 sm:text-base">
-        {i18n.about.description}
+         {approach.description}
       </p>
     </div>
     <a
       href="#contact"
       class="group inline-flex min-h-12 items-center justify-between rounded-[0.625rem] border border-base-300 px-4 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-base-content transition-colors hover:border-base-content hover:bg-base-content hover:text-base-100">
-      {i18n.contact.cta}<span
+       {approach.cta}<span
         class="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
         >↗</span
       >

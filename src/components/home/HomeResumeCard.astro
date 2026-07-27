@@ -1,23 +1,24 @@
 ---
-import type { HomeI18n } from '../../i18n/types';
+import type { I18n } from '../../models';
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
 }
 
 const { i18n } = Astro.props;
+const resume = i18n.pages.home.resume;
 ---
 
 <section
   id="experience"
   class="home-panel home-resume lg:col-span-4"
   aria-labelledby="resume-title">
-  <p class="typography-eyebrow text-[color:#171B15]/65">Résumé</p>
+   <p class="typography-eyebrow text-[color:#171B15]/65">{resume.label}</p>
   <div class="mt-10 flex h-[calc(100%-3rem)] flex-col justify-between gap-8">
     <div>
       <p
         class="text-6xl font-bold leading-none tracking-[-0.09em] text-[color:#171B15]">
-        11+
+         {resume.years}
       </p>
       <h2
         id="resume-title"
@@ -26,10 +27,10 @@ const { i18n } = Astro.props;
       </h2>
     </div>
     <a
-      href={i18n.hero.cvLink}
+       href={i18n.pages.home.hero.cvLink}
       download
       class="inline-flex w-fit items-center gap-2 rounded-[0.625rem] border border-[color:#171B15]/25 px-4 py-3 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-[color:#171B15] transition-colors hover:bg-[color:#171B15] hover:text-primary">
-      Get the PDF <span aria-hidden="true">↓</span>
+       {resume.download} <span aria-hidden="true">↓</span>
     </a>
   </div>
 </section>

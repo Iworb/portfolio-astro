@@ -1,14 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components';
 import CurrentYear from '../islands/CurrentYear';
-import type { HomeI18n, Locale } from '../../i18n/types';
+import type { Locale } from '../../i18n/types';
+import type { I18n } from '../../models';
 
 interface Props {
-  i18n: HomeI18n;
+  i18n: I18n;
   locale: Locale;
 }
 
-const { i18n: copy, locale } = Astro.props;
+const { i18n, locale } = Astro.props;
 ---
 
 <footer class="border-t border-base-300 bg-base-100 px-4 py-6 sm:px-6 lg:px-7">
@@ -19,17 +20,17 @@ const { i18n: copy, locale } = Astro.props;
       <a
         href={`/${locale}`}
         class="text-xl font-black tracking-tight text-base-content"
-        aria-label={copy.meta.title}>
-        OK
+        aria-label={i18n.meta.title}>
+        {i18n.nav.footer.nameShort}
       </a>
 
       <div class="text-xs leading-5 text-base-content/60">
-        <p>© <CurrentYear client:load /> {copy.footer.copyright}</p>
-        <p>{copy.footer.rights}</p>
+        <p>© <CurrentYear client:load /> {i18n.nav.footer.copyright}</p>
+        <p>{i18n.nav.footer.rights}</p>
       </div>
     </div>
 
-    <nav aria-label={copy.footer.social}>
+    <nav aria-label={i18n.nav.footer.social}>
       <ul
         class="flex flex-wrap items-center gap-5 text-xs font-medium text-base-content">
         <li>

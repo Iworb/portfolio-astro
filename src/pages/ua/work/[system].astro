@@ -3,7 +3,7 @@ import SystemPage from '../../../components/SystemPage.astro';
 import { ua } from '../../../i18n/ua';
 
 export function getStaticPaths() {
-  return ua.work.projects.map(project => ({
+  return ua.pages.work.projects.map(project => ({
     params: { system: project.slug },
   }));
 }
