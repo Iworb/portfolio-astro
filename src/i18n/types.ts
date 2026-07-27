@@ -114,7 +114,11 @@ export interface HomeI18n {
     cta: string;
     imageAlt: string;
   };
-  tech: { label: string; items: string[] };
+  tech: {
+    label: string;
+    title: string;
+    groups: { icon: string; label: string; items: string[] }[];
+  };
   about: { label: string; description: string; cta: string };
   industries: { label: string; items: string[] };
   contact: { title: string; cta: string };

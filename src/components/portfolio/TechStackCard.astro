@@ -8,65 +8,33 @@ interface Props {
 }
 
 const { i18n } = Astro.props;
+const items = i18n.tech.groups.flatMap(group => group.items);
+const icons = [
+  'lucide:hexagon',
+  'lucide:braces',
+  'lucide:radio',
+  'lucide:layers-3',
+  'lucide:blocks',
+  'lucide:server',
+  'lucide:cloud',
+];
 ---
 
-<BentoCard
-  class="min-h-72
-    lg:col-span-3 lg:row-span-2"
-  label={i18n.tech.label}>
+<BentoCard class="min-h-72 lg:col-span-3 lg:row-span-2" label={i18n.tech.label}>
   <div class="flex h-full flex-col">
     <h2 class="text-xs font-semibold text-base-content">{i18n.tech.label}</h2>
 
     <ul class="mt-5 grid gap-3 text-xs text-base-content/80">
-      <li class="flex items-center gap-3">
-        <span
-          class="grid size-5 place-items-center rounded bg-error/15 text-error">
-          <Icon name="lucide:hexagon" class="size-3.5" />
-        </span>
-        {i18n.tech.items[0]}
-      </li>
-      <li class="flex items-center gap-3">
-        <span
-          class="grid size-5 place-items-center rounded bg-info/15 text-info">
-          <Icon name="lucide:braces" class="size-3.5" />
-        </span>
-        {i18n.tech.items[1]}
-      </li>
-      <li class="flex items-center gap-3">
-        <span
-          class="grid size-5 place-items-center rounded bg-primary/15 text-primary">
-          <Icon name="lucide:radio" class="size-3.5" />
-        </span>
-        {i18n.tech.items[2]}
-      </li>
-      <li class="flex items-center gap-3">
-        <span
-          class="grid size-5 place-items-center rounded bg-primary/15 text-primary">
-          <Icon name="lucide:layers-3" class="size-3.5" />
-        </span>
-        {i18n.tech.items[3]}
-      </li>
-      <li class="flex items-center gap-3">
-        <span
-          class="grid size-5 place-items-center rounded bg-success/15 text-success">
-          <Icon name="lucide:blocks" class="size-3.5" />
-        </span>
-        {i18n.tech.items[4]}
-      </li>
-      <li class="flex items-center gap-3">
-        <span
-          class="grid size-5 place-items-center rounded bg-success/15 text-success">
-          <Icon name="lucide:server" class="size-3.5" />
-        </span>
-        {i18n.tech.items[5]}
-      </li>
-      <li class="flex items-center gap-3">
-        <span
-          class="grid size-5 place-items-center rounded bg-warning/20 text-warning">
-          <Icon name="lucide:cloud" class="size-3.5" />
-        </span>
-        {i18n.tech.items[6]}
-      </li>
+      {
+        items.map((item, index) => (
+          <li class="flex items-center gap-3">
+            <span class="grid size-5 place-items-center rounded bg-primary/15 text-primary">
+              <Icon name={icons[index % icons.length]} class="size-3.5" />
+            </span>
+            {item}
+          </li>
+        ))
+      }
     </ul>
   </div>
 </BentoCard>

@@ -147,7 +147,7 @@ export const ua: HomeI18n = {
     label: 'Фронтенд-архітектор',
     title: 'Створюю складні фронтенд-системи, які масштабуються.',
     description:
-      'Спеціаліст з Angular із понад 10 роками досвіду в корпоративних застосунках і керуванні командами.',
+      'Спеціаліст з Angular із понад 11 роками досвіду в корпоративних застосунках і керуванні командами.',
     viewWork: 'Переглянути проєкти',
     downloadCv: 'Завантажити резюме',
     cvLink: '/cv/Oleksandr_Koshevierov_Resume_UA.pdf',
@@ -170,14 +170,41 @@ export const ua: HomeI18n = {
   },
   tech: {
     label: 'Технології',
-    items: [
-      'Angular',
-      'TypeScript',
-      'RxJS',
-      'NgRx',
-      'Microfrontends',
-      'Node.js',
-      'AWS',
+    title: 'Інструменти для розробки й розвитку frontend-систем.',
+    groups: [
+      {
+        icon: 'lucide:panels-top-left',
+        label: 'Frontend',
+        items: ['Angular', 'React', 'Vue', 'TypeScript'],
+      },
+      {
+        icon: 'lucide:boxes',
+        label: 'State і архітектура',
+        items: ['RxJS', 'NgRx', 'Microfrontends'],
+      },
+      {
+        icon: 'lucide:chart-no-axes-combined',
+        label: 'Візуалізація',
+        items: ['Three.js', 'Leaflet', 'D3'],
+      },
+      {
+        icon: 'lucide:smartphone',
+        label: 'Кросплатформна розробка',
+        items: ['Flutter'],
+      },
+      {
+        icon: 'lucide:wrench',
+        label: 'Інструменти й delivery',
+        items: [
+          'Node.js',
+          'Vite',
+          'Git',
+          'GitHub Actions',
+          'Cypress',
+          'AWS',
+          'CI/CD',
+        ],
+      },
     ],
   },
   about: {
@@ -199,7 +226,7 @@ export const ua: HomeI18n = {
         title: 'HELIX Monitoring Platform',
         description:
           'Система моніторингу й аналітики для гірничодобувних підприємств із візуалізацією даних у реальному часі.',
-        tags: ['Angular', 'Maps', 'RxJS', 'NgRx'],
+        tags: ['Angular', 'RxJS', 'NgRx', 'Three.js', 'Leaflet', 'D3'],
         imageAlt: 'Промислове обладнання для моніторингу',
       },
       {
@@ -238,7 +265,7 @@ export const ua: HomeI18n = {
     description: 'Відкритий до нових можливостей та цікавих проєктів.',
   },
   footer: {
-    copyright: '© 2024 Oleksandr Koshevierov.',
+    copyright: 'Oleksandr Koshevierov.',
     rights: 'Усі права захищені.',
     social: 'Посилання на соцмережі',
   },

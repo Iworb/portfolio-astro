@@ -17,24 +17,11 @@ interface Props {
 
 const { i18n, locale } = Astro.props;
 ---
-
-<BaseLayout
-  title={i18n.meta.title}
-  description={i18n.meta.description}
-  lang={locale}>
-  <Header i18n={i18n} locale={locale} />
-
-  <div class="min-h-0 flex-1 overflow-y-auto overscroll-contain">
-    <main
-      class="home-grid mx-auto max-w-[90rem] px-3 py-3 sm:px-5 sm:py-5 lg:px-6">
-      <HomeHeroCard i18n={i18n} />
-      <HomeAvailabilityCard i18n={i18n} />
-      <HomeFeaturedWorkCard i18n={i18n} locale={locale} />
-      <HomeSkillsCard i18n={i18n} />
-      <HomeResumeCard i18n={i18n} />
-      <HomeApproachCard i18n={i18n} />
-    </main>
-
-    <PageFooter i18n={i18n} locale={locale} />
-  </div>
-</BaseLayout>
+<div class="home-grid mx-auto max-w-[90rem]">
+  <HomeHeroCard i18n={i18n} locale={locale} />
+  <HomeAvailabilityCard i18n={i18n} />
+  <HomeResumeCard i18n={i18n} />
+  <HomeFeaturedWorkCard i18n={i18n} locale={locale} />
+  <HomeSkillsCard i18n={i18n} />
+  <HomeApproachCard i18n={i18n} />
+</div>

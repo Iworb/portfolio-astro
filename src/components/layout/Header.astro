@@ -13,7 +13,7 @@ interface Props {
   pathSuffix?: string;
 }
 
-const { i18n: copy, locale, currentPage = 'home', pathSuffix } = Astro.props;
+const { i18n, locale, currentPage = 'home', pathSuffix } = Astro.props;
 const languagePath =
   pathSuffix ??
   (currentPage === 'work'
@@ -36,7 +36,7 @@ const languagePath =
         <label
           for="mobile-navigation"
           class="inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-base-300 bg-base-100 text-base-content transition-colors hover:border-base-content/60"
-          aria-label={copy.mobile.open}>
+          aria-label={i18n.mobile.open}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="size-4"
@@ -56,18 +56,18 @@ const languagePath =
       <a
         href={`/${locale}`}
         class="ml-3 font-sans text-[1.05rem] font-extrabold tracking-[-0.06em] text-base-content lg:ml-0"
-        aria-label={copy.meta.title}>
+        aria-label={i18n.meta.title}>
         O. Koshevierov
       </a>
     </div>
 
-    <DesktopNavigation i18n={copy} locale={locale} currentPage={currentPage} />
+    <DesktopNavigation i18n={i18n} locale={locale} currentPage={currentPage} />
 
     <div class="flex flex-1 items-center justify-end gap-2 lg:flex-none">
       <LanguageSwitcher
         client:load
         locale={locale}
-        labels={copy.language}
+        labels={i18n.language}
         pathSuffix={languagePath}>
         <Icon slot="chevron" name="lucide:chevron-down" class="size-3.5" />
       </LanguageSwitcher>
@@ -79,4 +79,4 @@ const languagePath =
     </div>
   </div>
 </header>
-<MobileNavigation i18n={copy} locale={locale} />
+<MobileNavigation i18n={i18n} locale={locale} />

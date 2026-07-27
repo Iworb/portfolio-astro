@@ -148,7 +148,7 @@ export const de: HomeI18n = {
     label: 'Frontend-Architekt',
     title: 'Komplexe Frontend-Systeme entwickeln, die skalieren.',
     description:
-      'Angular-Spezialist mit über 10 Jahren Erfahrung in Unternehmensanwendungen und Teamleitung.',
+      'Angular-Spezialist mit mehr als 11 Jahren Erfahrung in Unternehmensanwendungen und Teamleitung.',
     viewWork: 'Projekte ansehen',
     downloadCv: 'Lebenslauf laden',
     cvLink: '/cv/Oleksandr_Koshevierov_Lebenslauf_DE.pdf',
@@ -171,14 +171,41 @@ export const de: HomeI18n = {
   },
   tech: {
     label: 'Technologie-Stack',
-    items: [
-      'Angular',
-      'TypeScript',
-      'RxJS',
-      'NgRx',
-      'Microfrontends',
-      'Node.js',
-      'AWS',
+    title: 'Werkzeuge für belastbare und weiterentwickelbare Frontends.',
+    groups: [
+      {
+        icon: 'lucide:panels-top-left',
+        label: 'Frontend',
+        items: ['Angular', 'React', 'Vue', 'TypeScript'],
+      },
+      {
+        icon: 'lucide:boxes',
+        label: 'State & Architektur',
+        items: ['RxJS', 'NgRx', 'Microfrontends'],
+      },
+      {
+        icon: 'lucide:chart-no-axes-combined',
+        label: 'Visualisierung',
+        items: ['Three.js', 'Leaflet', 'D3'],
+      },
+      {
+        icon: 'lucide:smartphone',
+        label: 'Cross-Platform',
+        items: ['Flutter'],
+      },
+      {
+        icon: 'lucide:wrench',
+        label: 'Tools & Delivery',
+        items: [
+          'Node.js',
+          'Vite',
+          'Git',
+          'GitHub Actions',
+          'Cypress',
+          'AWS',
+          'CI/CD',
+        ],
+      },
     ],
   },
   about: {
@@ -203,7 +230,7 @@ export const de: HomeI18n = {
         title: 'HELIX Monitoring Platform',
         description:
           'Echtzeit-Monitoring und Analysesystem für Bergbauunternehmen mit Heatmap-Datenvisualisierung.',
-        tags: ['Angular', 'Maps', 'RxJS', 'NgRx'],
+        tags: ['Angular', 'RxJS', 'NgRx', 'Three.js', 'Leaflet', 'D3'],
         imageAlt: 'Industrielle Überwachungsanlage',
       },
       {
@@ -242,7 +269,7 @@ export const de: HomeI18n = {
     description: 'Offen für neue Möglichkeiten und spannende Projekte.',
   },
   footer: {
-    copyright: '© 2024 Oleksandr Koshevierov.',
+    copyright: 'Oleksandr Koshevierov.',
     rights: 'Alle Rechte vorbehalten.',
     social: 'Social-Media-Links',
   },

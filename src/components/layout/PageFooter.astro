@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import CurrentYear from '../islands/CurrentYear';
 import type { HomeI18n, Locale } from '../../i18n/types';
 
 interface Props {
@@ -23,7 +24,7 @@ const { i18n: copy, locale } = Astro.props;
       </a>
 
       <div class="text-xs leading-5 text-base-content/60">
-        <p>{copy.footer.copyright}</p>
+        <p>© <CurrentYear client:load /> {copy.footer.copyright}</p>
         <p>{copy.footer.rights}</p>
       </div>
     </div>

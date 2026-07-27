@@ -147,7 +147,7 @@ export const en: HomeI18n = {
     label: 'Frontend architect',
     title: 'Building complex frontend systems that scale.',
     description:
-      'Angular specialist with 10+ years of experience in enterprise applications and team leadership.',
+      'Angular specialist with more than 11 years of experience in enterprise applications and team leadership.',
     viewWork: 'View my work',
     downloadCv: 'Download CV',
     cvLink: '/cv/Oleksandr_Koshevierov_CV_EN.pdf',
@@ -169,15 +169,42 @@ export const en: HomeI18n = {
     imageAlt: 'Mountain landscape representing the project',
   },
   tech: {
-    label: 'Tech Stack',
-    items: [
-      'Angular',
-      'TypeScript',
-      'RxJS',
-      'NgRx',
-      'Microfrontends',
-      'Node.js',
-      'AWS',
+    label: 'Tech stack',
+    title: 'Tools I use to build and evolve frontend systems.',
+    groups: [
+      {
+        icon: 'lucide:panels-top-left',
+        label: 'Frontend',
+        items: ['Angular', 'React', 'Vue', 'TypeScript'],
+      },
+      {
+        icon: 'lucide:boxes',
+        label: 'State & architecture',
+        items: ['RxJS', 'NgRx', 'Microfrontends'],
+      },
+      {
+        icon: 'lucide:chart-no-axes-combined',
+        label: 'Visualisation',
+        items: ['Three.js', 'Leaflet', 'D3'],
+      },
+      {
+        icon: 'lucide:smartphone',
+        label: 'Cross-platform',
+        items: ['Flutter'],
+      },
+      {
+        icon: 'lucide:wrench',
+        label: 'Tools & delivery',
+        items: [
+          'Node.js',
+          'Vite',
+          'Git',
+          'GitHub Actions',
+          'Cypress',
+          'AWS',
+          'CI/CD',
+        ],
+      },
     ],
   },
   about: {
@@ -199,7 +226,7 @@ export const en: HomeI18n = {
         title: 'HELIX Monitoring Platform',
         description:
           'Real-time monitoring and analytics system for mining operations with heat-time data visualization.',
-        tags: ['Angular', 'Maps', 'RxJS', 'NgRx'],
+        tags: ['Angular', 'RxJS', 'NgRx', 'Three.js', 'Leaflet', 'D3'],
         imageAlt: 'Industrial monitoring equipment',
       },
       {
@@ -238,7 +265,7 @@ export const en: HomeI18n = {
     description: 'Open to new opportunities and exciting projects.',
   },
   footer: {
-    copyright: '© 2024 Oleksandr Koshevierov.',
+    copyright: 'Oleksandr Koshevierov.',
     rights: 'All rights reserved.',
     social: 'Social links',
   },

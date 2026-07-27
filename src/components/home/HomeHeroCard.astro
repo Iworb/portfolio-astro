@@ -1,11 +1,12 @@
 ---
-import type { HomeI18n } from '../../i18n/types';
+import type { HomeI18n, Locale } from '../../i18n/types';
 
 interface Props {
   i18n: HomeI18n;
+  locale: Locale;
 }
 
-const { i18n } = Astro.props;
+const { i18n, locale } = Astro.props;
 ---
 
 <section
@@ -34,7 +35,7 @@ const { i18n } = Astro.props;
         {i18n.hero.downloadCv}<span aria-hidden="true">↓</span>
       </a>
       <a
-        href="#contact"
+        href={`/${locale}/contact`}
         class="btn btn-outline min-h-11 rounded-[0.625rem] px-5 font-semibold">
         {i18n.contact.cta}<span aria-hidden="true">↗</span>
       </a>

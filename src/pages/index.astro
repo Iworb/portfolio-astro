@@ -1,6 +1,15 @@
 ---
 import HomePage from '../components/HomePage.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { en } from '../i18n/en';
+
 ---
 
-<HomePage i18n={en} locale="en" />
+<BaseLayout
+  title={en.meta.title}
+  description={en.meta.description}
+  i18n={en}
+  locale="en"
+>
+  <HomePage i18n={en} locale="en" />
+</BaseLayout>
