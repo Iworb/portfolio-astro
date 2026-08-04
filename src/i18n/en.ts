@@ -140,6 +140,8 @@ export const en: I18n = {
           title: 'HELIX',
           description:
             'A mining monitoring platform for surface and underground operations.',
+          details:
+            'HELIX brings independently deployed monitoring applications into one operational environment for surface and underground operations. The architecture supports domain ownership, shared UI capabilities and a gradual migration path while connecting real-time location, telemetry and operational data in map-focused workflows.',
           tags: [
             'Angular',
             'NgRx',
@@ -147,6 +149,87 @@ export const en: I18n = {
             'Shared library',
             'Maps & visualisation',
           ],
+          technologies: [
+            {
+              category: 'Framework',
+              items: [
+                {
+                  name: 'Angular',
+                  description:
+                    'Application framework for the operational frontend domains.',
+                },
+              ],
+            },
+            {
+              category: 'Interface & visualisation',
+              items: [
+                {
+                  name: 'Angular Material',
+                  description:
+                    'Material-based controls and interaction patterns for enterprise workflows.',
+                },
+                {
+                  name: 'Angular CDK',
+                  description:
+                    'Low-level accessibility, overlay and component primitives.',
+                },
+                {
+                  name: 'Angular Flex Layout',
+                  description:
+                    'Responsive layout utilities used across the application shell.',
+                },
+                {
+                  name: 'Tailwind CSS',
+                  description:
+                    'Utility-first styling used in newer frontend generations.',
+                },
+                {
+                  name: 'Maps & visualisation',
+                  description:
+                    'Spatial interfaces for monitoring assets, events and field operations.',
+                },
+              ],
+            },
+            {
+              category: 'State management',
+              items: [
+                {
+                  name: 'NgRx',
+                  description:
+                    'State management for shared operational data and predictable workflows.',
+                },
+                {
+                  name: 'RxJS',
+                  description:
+                    'Reactive streams for live monitoring data and asynchronous workflows.',
+                },
+              ],
+            },
+            {
+              category: 'Application architecture',
+              items: [
+                {
+                  name: 'Transloco',
+                  description:
+                    'Runtime translation support for the multi-application environment.',
+                },
+                {
+                  name: 'Microapp architecture',
+                  description:
+                    'Independent application boundaries for incremental delivery and migration.',
+                },
+                {
+                  name: 'Shared library',
+                  description:
+                    'Reusable UI and platform capabilities shared across the applications.',
+                },
+              ],
+            },
+          ],
+          brochure: {
+            label: 'Read the public HELIX brochure',
+            url: 'https://mstglobal.com/helix_brochure/',
+          },
           featured: true,
         },
         {
@@ -156,7 +239,71 @@ export const en: I18n = {
           title: 'Merchandise planning application',
           description:
             'Data- and computation-intensive budgeting application for merchandise categories.',
+          details:
+            'A high-load planning frontend used by budget planners to compare planned and actual values across merchandise categories and financial years. I designed the application architecture, the multi-level data experience and the client-side calculation flow for interdependent metrics, including feedback and recovery when a configuration becomes too heavy for the client machine.',
           tags: ['Angular', 'NgRx', 'TreeGrid'],
+          technologies: [
+            {
+              category: 'Framework',
+              items: [
+                {
+                  name: 'Angular',
+                  description:
+                    'Application framework for the planning workflow and enterprise portal integration.',
+                },
+              ],
+            },
+            {
+              category: 'Interface & visualisation',
+              items: [
+                {
+                  name: 'TreeGrid by COQsoft',
+                  description:
+                    'Multi-level data grid with different views, detail levels and user configuration.',
+                },
+              ],
+            },
+            {
+              category: 'State management',
+              items: [
+                {
+                  name: 'NgRx',
+                  description:
+                    'Predictable state flow for planning data, configuration and derived values.',
+                },
+                {
+                  name: 'Component Store',
+                  description:
+                    'Localized state management for focused planning features.',
+                },
+                {
+                  name: 'RxJS',
+                  description:
+                    'Reactive orchestration of data loading, recalculation and user feedback.',
+                },
+              ],
+            },
+            {
+              category: 'Testing & delivery',
+              items: [
+                {
+                  name: 'Cypress',
+                  description:
+                    'End-to-end coverage for complex planning workflows.',
+                },
+                {
+                  name: 'Karma',
+                  description:
+                    'Frontend test tooling used in the Angular application.',
+                },
+                {
+                  name: 'Azure CI/CD',
+                  description:
+                    'Continuous integration and delivery support for the application lifecycle.',
+                },
+              ],
+            },
+          ],
         },
         {
           slug: 'positron',
@@ -165,12 +312,61 @@ export const en: I18n = {
           title: 'Positron',
           description:
             'Real-time IoT monitoring of sensors, devices and their states on a map.',
+          details:
+            'Positron monitored sensors, devices and their changing states on a real-time map. I analyzed the AngularJS monolith, extracted shared modules, split the remaining domains into microapps and independently migrated the applications to Angular 6. The system supported both ready-made IoT solutions and customer-specific devices with values such as location, speed, temperature and fill level.',
           tags: [
             'AngularJS',
             'Angular',
             'Microapps',
             'Shared library',
             'IoT maps',
+          ],
+          technologies: [
+            {
+              category: 'Framework',
+              items: [
+                {
+                  name: 'AngularJS',
+                  description:
+                    'Legacy application foundation analyzed and decomposed into domain boundaries.',
+                },
+                {
+                  name: 'Angular',
+                  description:
+                    'Target framework for the independently migrated applications.',
+                },
+              ],
+            },
+            {
+              category: 'Application architecture',
+              items: [
+                {
+                  name: 'Microapp architecture',
+                  description:
+                    'Domain-focused applications composed from the former monolith.',
+                },
+                {
+                  name: 'Shared library',
+                  description:
+                    'Common modules extracted from the original AngularJS application.',
+                },
+              ],
+            },
+            {
+              category: 'Interface & visualisation',
+              items: [
+                {
+                  name: 'Real-time IoT data',
+                  description:
+                    'Live device states and numeric telemetry presented in operational workflows.',
+                },
+                {
+                  name: 'Map interfaces',
+                  description:
+                    'Location-centered views for sensors, devices and their states.',
+                },
+              ],
+            },
           ],
         },
         {
@@ -180,14 +376,59 @@ export const en: I18n = {
           title: 'Internal integration portal',
           description:
             'Internal applications for monitoring the state of corporate integrations.',
+          details:
+            'An internal portal composed of domain-focused applications for monitoring corporate integrations. I helped select the target frontend architecture, decomposed the legacy monolith by business domain, created the shared library and implemented part of the applications in a team of around three developers. The resulting microapps could follow independent development and delivery cycles.',
           tags: ['Angular', 'NgRx', 'Microapps', 'Shared library'],
+          technologies: [
+            {
+              category: 'Framework',
+              items: [
+                {
+                  name: 'Angular',
+                  description:
+                    'Frontend framework for the domain-focused portal applications.',
+                },
+              ],
+            },
+            {
+              category: 'State management',
+              items: [
+                {
+                  name: 'NgRx',
+                  description:
+                    'State management for portal workflows and integration status data.',
+                },
+                {
+                  name: 'RxJS',
+                  description:
+                    'Reactive data flows across independent portal applications.',
+                },
+              ],
+            },
+            {
+              category: 'Application architecture',
+              items: [
+                {
+                  name: 'Microapp architecture',
+                  description:
+                    'Business-domain applications extracted from the legacy portal.',
+                },
+                {
+                  name: 'Shared library',
+                  description:
+                    'Common capabilities reused by the independently delivered applications.',
+                },
+              ],
+            },
+          ],
         },
       ],
       detail: {
         back: 'All systems',
         view: 'View system',
         overview: 'System overview',
-        signals: 'Architecture signals',
+        technologyStack: 'Technology stack',
+        gallery: 'System images',
         nda: 'This page contains only the public, NDA-safe scope approved for the portfolio.',
       },
       note: 'The project hierarchy follows the confirmed master profile. Detailed case studies will expand on role, constraints, decisions and outcomes within the stated NDA boundaries.',
@@ -257,7 +498,7 @@ export const en: I18n = {
       hero: {
         eyebrow: 'Contact / start here',
         title: 'Get in touch.',
-        description: 'Choose a channel — both links work directly.',
+        description: 'Choose a channel',
       },
       email: { label: 'Send an email.', address: 'iworb.ne@gmail.com' },
       linkedin: { label: 'Connect on LinkedIn.', action: 'Open LinkedIn' },

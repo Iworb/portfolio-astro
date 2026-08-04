@@ -21,7 +21,7 @@ const experience = i18n.pages.experience;
     <main
       class="mx-auto max-w-[90rem] px-3 py-8 sm:px-5 sm:py-12 lg:px-6 lg:py-16">
       <section
-        class="grid gap-8 border-b border-base-300 pb-12 lg:grid-cols-12 lg:items-end lg:pb-16">
+        class="grid gap-8 pb-12 lg:grid-cols-12 lg:items-end lg:pb-16">
         <div class="lg:col-span-8">
           <p class="typography-eyebrow text-base-content/60">
             {experience.hero.eyebrow}
@@ -54,7 +54,7 @@ const experience = i18n.pages.experience;
           experience.areas.map((area, index) => (
             <article class="experience-area lg:p-10">
               <>
-                <p class="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-primary">
+                <p class="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-accent">
                   {String(index + 1).padStart(2, '0')}
                 </p>
                 <h2 class="mt-10 text-3xl font-bold leading-[0.92] tracking-[-0.065em] text-base-content">
