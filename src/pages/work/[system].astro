@@ -1,14 +1,11 @@
 ---
-import SystemPage from '../../components/SystemPage.astro';
-import { en } from '../../i18n/en';
+import LocaleRedirect from '../../components/LocaleRedirect.astro';
 
 export function getStaticPaths() {
-  return en.pages.work.projects.map(project => ({
-    params: { system: project.slug },
+  return ['helix', 'merchandise-planning', 'positron', 'integration-portal'].map(system => ({
+    params: {system},
   }));
 }
-
-const { system } = Astro.params;
 ---
 
-<SystemPage i18n={en} locale="en" slug={system!} />
+<LocaleRedirect />

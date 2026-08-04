@@ -1,0 +1,24 @@
+---
+const fallbackLocale = 'en';
+---
+
+<script is:inline>
+  const supportedLocales = ['en', 'de', 'ru', 'ua'];
+  const browserLocales = navigator.languages?.length
+    ? navigator.languages
+    : [navigator.language];
+
+  const locale = browserLocales
+    .map(language => language.toLowerCase().split('-')[0])
+    .map(language => (language === 'uk' ? 'ua' : language))
+    .find(language => supportedLocales.includes(language)) ?? 'en';
+
+  const path = window.location.pathname.replace(/^\/+/, '');
+  const destination = `/${locale}${path ? `/${path}` : ''}${window.location.search}${window.location.hash}`;
+
+  window.location.replace(destination);
+</script>
+
+<noscript>
+  <meta http-equiv="refresh" content={`0;url=/${fallbackLocale}`} />
+</noscript>
