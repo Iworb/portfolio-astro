@@ -139,12 +139,7 @@ export const de: I18n = {
           title: 'HELIX',
           description:
             'Eine Monitoring-Plattform für Tage- und Untertagebetriebe im Bergbau.',
-          tags: [
-            'Angular 7–22',
-            'Microapps',
-            'Shared Library',
-            'Karten & Visualisierung',
-          ],
+          tags: ['Angular', 'NgRx', 'Microapps', 'Karten & Visualisierung'],
           featured: true,
         },
         {
@@ -154,7 +149,7 @@ export const de: I18n = {
           title: 'Merchandise-Planning-Anwendung',
           description:
             'Daten- und rechenintensive Budgetierungsanwendung für Warengruppen.',
-          tags: ['Angular', 'NgRx', 'TreeGrid', 'Cypress'],
+          tags: ['Angular', 'NgRx', 'TreeGrid'],
         },
         {
           slug: 'positron',
@@ -163,7 +158,13 @@ export const de: I18n = {
           title: 'Positron',
           description:
             'Echtzeit-IoT-Monitoring von Sensoren, Geräten und ihren Zuständen auf einer Karte.',
-          tags: ['AngularJS', 'Angular 6', 'Microapps', 'IoT-Karten'],
+          tags: [
+            'AngularJS',
+            'Angular',
+            'Microapps',
+            'Shared library',
+            'IoT-Karten',
+          ],
         },
         {
           slug: 'integration-portal',
@@ -172,7 +173,7 @@ export const de: I18n = {
           title: 'Internes Integrationsportal',
           description:
             'Interne Anwendungen zur Überwachung des Zustands von Unternehmensintegrationen.',
-          tags: ['Angular 11', 'TypeScript', 'Microapps', 'Shared Libraries'],
+          tags: ['Angular', 'NgRx', 'Microapps', 'Shared library'],
         },
       ],
       detail: {

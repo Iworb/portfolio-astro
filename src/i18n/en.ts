@@ -50,7 +50,12 @@ export const en: I18n = {
         location: 'Germany',
         note: 'Open for the right build',
       },
-      resume: { label: 'Résumé', years: '11+', details: 'years building frontend systems', download: 'Get the PDF' },
+      resume: {
+        label: 'Résumé',
+        years: '11+',
+        details: 'years building frontend systems',
+        download: 'Get the PDF',
+      },
       featuredWork: {
         slug: 'helix',
         label: 'Selected Work',
@@ -136,7 +141,8 @@ export const en: I18n = {
           description:
             'A mining monitoring platform for surface and underground operations.',
           tags: [
-            'Angular 7–22',
+            'Angular',
+            'NgRx',
             'Microapps',
             'Shared library',
             'Maps & visualisation',
@@ -150,7 +156,7 @@ export const en: I18n = {
           title: 'Merchandise planning application',
           description:
             'Data- and computation-intensive budgeting application for merchandise categories.',
-          tags: ['Angular', 'NgRx', 'TreeGrid', 'Cypress'],
+          tags: ['Angular', 'NgRx', 'TreeGrid'],
         },
         {
           slug: 'positron',
@@ -159,7 +165,13 @@ export const en: I18n = {
           title: 'Positron',
           description:
             'Real-time IoT monitoring of sensors, devices and their states on a map.',
-          tags: ['AngularJS', 'Angular 6', 'Microapps', 'IoT maps'],
+          tags: [
+            'AngularJS',
+            'Angular',
+            'Microapps',
+            'Shared library',
+            'IoT maps',
+          ],
         },
         {
           slug: 'integration-portal',
@@ -168,7 +180,7 @@ export const en: I18n = {
           title: 'Internal integration portal',
           description:
             'Internal applications for monitoring the state of corporate integrations.',
-          tags: ['Angular 11', 'TypeScript', 'Microapps', 'Shared libraries'],
+          tags: ['Angular', 'NgRx', 'Microapps', 'Shared library'],
         },
       ],
       detail: {

@@ -190,10 +190,6 @@
     padding: 1.5rem;
   }
 
-  .work-card-featured {
-    min-height: 28rem;
-  }
-
   @media (min-width: 64rem) {
     .work-card {
       padding: 2rem;

@@ -139,12 +139,7 @@ export const ua: I18n = {
           title: 'HELIX',
           description:
             'Платформа моніторингу відкритих і підземних гірничих робіт.',
-          tags: [
-            'Angular 7–22',
-            'Microapps',
-            'Shared library',
-            'Карти й візуалізація',
-          ],
+          tags: ['Angular', 'NgRx', 'Microapps', 'Карти й візуалізація'],
           featured: true,
         },
         {
@@ -153,7 +148,7 @@ export const ua: I18n = {
           client: 'Boot Barn',
           title: 'Застосунок для планування асортименту',
           description: 'Застосунок для бюджетування товарних категорій.',
-          tags: ['Angular', 'NgRx', 'TreeGrid', 'Cypress'],
+          tags: ['Angular', 'NgRx', 'TreeGrid'],
         },
         {
           slug: 'positron',
@@ -162,7 +157,13 @@ export const ua: I18n = {
           title: 'Positron',
           description:
             'IoT-моніторинг датчиків, пристроїв та їхніх станів на мапі.',
-          tags: ['AngularJS', 'Angular 6', 'Microapps', 'IoT-мапи'],
+          tags: [
+            'AngularJS',
+            'Angular',
+            'Microapps',
+            'Shared library',
+            'IoT-мапи',
+          ],
         },
         {
           slug: 'integration-portal',
@@ -171,7 +172,7 @@ export const ua: I18n = {
           title: 'Внутрішній портал інтеграцій',
           description:
             'Застосунки для моніторингу стану корпоративних інтеграцій.',
-          tags: ['Angular 11', 'TypeScript', 'Microapps', 'Shared libraries'],
+          tags: ['Angular', 'NgRx', 'Microapps', 'Shared library'],
         },
       ],
       detail: {
