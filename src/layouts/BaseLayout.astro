@@ -39,11 +39,11 @@ const {
     <title>{title}</title>
 
     <script is:inline>
-      import { themeKey } from '../config/theme.ts';
+      const themeKey = 'theme';
 
       const storedTheme = localStorage.getItem(themeKey);
 
-      if (storedTheme) {
+      if (storedTheme === 'day' || storedTheme === 'night') {
         document.documentElement.dataset.theme = storedTheme;
       } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.dataset.theme = 'night';

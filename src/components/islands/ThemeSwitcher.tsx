@@ -1,4 +1,5 @@
 import type { ComponentChildren, TargetedEvent } from 'preact';
+import { useEffect, useRef } from 'preact/hooks';
 import { themeKey } from '../../config/theme.ts';
 
 interface Props {
@@ -7,17 +8,36 @@ interface Props {
 }
 
 export default function ThemeSwitcher({ moon, sun }: Props) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem(themeKey);
+    const isNight = storedTheme === 'night';
+
+    if (storedTheme === 'day' || isNight) {
+      document.documentElement.dataset.theme = storedTheme;
+    }
+
+    if (inputRef.current) {
+      inputRef.current.checked = isNight;
+    }
+  }, []);
+
   const saveTheme = (event: TargetedEvent<HTMLInputElement, Event>) => {
+    const theme = event.currentTarget.checked ? 'night' : 'day';
+
     localStorage.setItem(
       themeKey,
-      event.currentTarget.checked ? 'night' : 'day',
+      theme,
     );
+    document.documentElement.dataset.theme = theme;
   };
 
   return (
     <label className="relative inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-base-300 bg-base-100 text-base-content transition-[border-color,background-color,color] duration-200 hover:border-base-content/60 focus-within:border-base-content/60">
       <input
         type="checkbox"
+        ref={inputRef}
         className="theme-controller peer sr-only"
         value="night"
         aria-label="Change theme"
