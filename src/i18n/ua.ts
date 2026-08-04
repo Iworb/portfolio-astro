@@ -7,9 +7,9 @@ export const ua: I18n = {
   },
   nav: {
     footer: {
-      copyright: 'Oleksandr Koshevierov.',
+      copyright: 'Oleksandr Koshevierov',
       nameShort: 'OK',
-      rights: 'Усі права захищені.',
+      rights: 'Усі права захищені',
       social: 'Посилання на соцмережі',
     },
     header: {
@@ -50,8 +50,14 @@ export const ua: I18n = {
         location: 'Німеччина',
         note: 'Відкритий до відповідного проєкту',
       },
-      resume: { label: 'Резюме', years: '11+', download: 'Завантажити PDF' },
+      resume: {
+        label: 'Резюме',
+        years: '11+',
+        details: 'років досвіду розробки Frontend систем',
+        download: 'Завантажити PDF',
+      },
       featuredWork: {
+        slug: 'helix',
         label: 'Обрані роботи',
         viewAll: 'Усі проєкти',
         eyebrow: 'Обрана система / 01',
@@ -85,7 +91,7 @@ export const ua: I18n = {
           {
             icon: 'lucide:chart-no-axes-combined',
             label: 'Візуалізація',
-            items: ['Three.js', 'Leaflet', 'D3'],
+            items: ['Three.js', 'Leaflet', 'D3', 'Chart.js'],
           },
           {
             icon: 'lucide:smartphone',
@@ -97,11 +103,14 @@ export const ua: I18n = {
             label: 'Інструменти й delivery',
             items: [
               'Node.js',
+              'Webpack',
               'Vite',
               'Git',
               'GitHub Actions',
               'Cypress',
+              'Playwright',
               'AWS',
+              'Azure',
               'CI/CD',
             ],
           },
@@ -109,8 +118,7 @@ export const ua: I18n = {
       },
       approach: {
         label: 'Як я працюю',
-        title:
-          'Складність заслуговує на спокійний інтерфейс і спокійний процес delivery.',
+        title: 'Я додаю ясності складній фронтенд-розробці.',
         description:
           'Мені подобається розв’язувати складні задачі й перетворювати ідеї на надійні продукти, якими користуються люди.',
         cta: 'Зв’язатися зі мною',

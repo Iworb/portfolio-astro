@@ -12,17 +12,17 @@ const featured = i18n.pages.home.featuredWork;
 const tags = featured.tags;
 ---
 
-<section
+<a
   id="work"
   class="home-panel group min-h-80 lg:col-span-8"
-  aria-labelledby="featured-work-title">
+  aria-labelledby="featured-work-title"
+  href={`/${locale}/work/${featured.slug}`}>
   <div class="flex items-start justify-between gap-5">
     <p class="typography-eyebrow text-base-content/60">{featured.label}</p>
-    <a
-      href={`/${locale}/work`}
-      class="font-mono text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-base-content transition-opacity hover:opacity-60">
+    <span
+      class="btn btn-ghost min-h-11 rounded-[10px] -mt-4 -mr-4 px-2 text-sm font-normal text-base-content">
       {featured.viewAll} →
-    </a>
+    </span>
   </div>
 
   <div class="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_10rem] lg:items-end">
@@ -63,4 +63,4 @@ const tags = featured.tags;
       </div>
     </div>
   </div>
-</section>
+</a>

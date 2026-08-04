@@ -7,9 +7,9 @@ export const de: I18n = {
   },
   nav: {
     footer: {
-      copyright: 'Oleksandr Koshevierov.',
+      copyright: 'Oleksandr Koshevierov',
       nameShort: 'OK',
-      rights: 'Alle Rechte vorbehalten.',
+      rights: 'Alle Rechte vorbehalten',
       social: 'Social-Media-Links',
     },
     header: {
@@ -50,8 +50,14 @@ export const de: I18n = {
         location: 'Deutschland',
         note: 'Offen für den richtigen Aufbau',
       },
-      resume: { label: 'Lebenslauf', years: '11+', download: 'PDF laden' },
+      resume: {
+        label: 'Lebenslauf',
+        years: '11+',
+        details: 'Jahre Erfahrung in der Entwicklung von Frontend-Systemen',
+        download: 'PDF laden',
+      },
       featuredWork: {
+        slug: 'helix',
         label: 'Ausgewählte Arbeiten',
         viewAll: 'Alle Projekte ansehen',
         eyebrow: 'Ausgewähltes System / 01',
@@ -85,7 +91,7 @@ export const de: I18n = {
           {
             icon: 'lucide:chart-no-axes-combined',
             label: 'Visualisierung',
-            items: ['Three.js', 'Leaflet', 'D3'],
+            items: ['Three.js', 'Leaflet', 'D3', 'Chart.js'],
           },
           {
             icon: 'lucide:smartphone',
@@ -97,11 +103,14 @@ export const de: I18n = {
             label: 'Tools & Delivery',
             items: [
               'Node.js',
+              'Webpack',
               'Vite',
               'Git',
               'GitHub Actions',
               'Cypress',
+              'Playwright',
               'AWS',
+              'Azure',
               'CI/CD',
             ],
           },
@@ -109,8 +118,7 @@ export const de: I18n = {
       },
       approach: {
         label: 'Arbeitsweise',
-        title:
-          'Komplexität verdient eine ruhige Oberfläche und einen ruhigen Delivery-Prozess.',
+        title: 'Ich bringe Klarheit in komplexe Frontend-Arbeit.',
         description:
           'Ich löse gerne komplexe Probleme und verwandle Ideen in zuverlässige Produkte, die Menschen nutzen.',
         cta: 'Kontakt aufnehmen',

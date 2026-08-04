@@ -9,7 +9,7 @@ export const en: I18n = {
     footer: {
       copyright: 'Oleksandr Koshevierov',
       nameShort: 'OK',
-      rights: 'All rights reserved.',
+      rights: 'All rights reserved',
       social: 'Social links',
     },
     header: {
@@ -50,8 +50,9 @@ export const en: I18n = {
         location: 'Germany',
         note: 'Open for the right build',
       },
-      resume: { label: 'Résumé', years: '11+', download: 'Get the PDF' },
+      resume: { label: 'Résumé', years: '11+', details: 'years building frontend systems', download: 'Get the PDF' },
       featuredWork: {
+        slug: 'helix',
         label: 'Selected Work',
         viewAll: 'View all projects',
         eyebrow: 'Selected system / 01',
@@ -85,7 +86,7 @@ export const en: I18n = {
           {
             icon: 'lucide:chart-no-axes-combined',
             label: 'Visualisation',
-            items: ['Three.js', 'Leaflet', 'D3'],
+            items: ['Three.js', 'Leaflet', 'D3', 'Chart.js'],
           },
           {
             icon: 'lucide:smartphone',
@@ -97,11 +98,14 @@ export const en: I18n = {
             label: 'Tools & delivery',
             items: [
               'Node.js',
+              'Webpack',
               'Vite',
               'Git',
               'GitHub Actions',
               'Cypress',
+              'Playwright',
               'AWS',
+              'Azure',
               'CI/CD',
             ],
           },
@@ -109,8 +113,7 @@ export const en: I18n = {
       },
       approach: {
         label: 'How I work',
-        title:
-          'Complexity deserves a calm interface and a calm delivery process.',
+        title: 'I bring clarity to complex frontend work.',
         description:
           'I enjoy solving complex problems and turning ideas into reliable products people use.',
         cta: 'Contact me',

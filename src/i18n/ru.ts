@@ -7,9 +7,9 @@ export const ru: I18n = {
   },
   nav: {
     footer: {
-      copyright: 'Oleksandr Koshevierov.',
+      copyright: 'Oleksandr Koshevierov',
       nameShort: 'OK',
-      rights: 'Все права защищены.',
+      rights: 'Все права защищены',
       social: 'Ссылки на соцсети',
     },
     header: {
@@ -50,8 +50,14 @@ export const ru: I18n = {
         location: 'Германия',
         note: 'Открыт для подходящего проекта',
       },
-      resume: { label: 'Резюме', years: '11+', download: 'Скачать PDF' },
+      resume: {
+        label: 'Резюме',
+        years: '11+',
+        details: 'лет опыта в создании Frontend систем',
+        download: 'Скачать PDF',
+      },
       featuredWork: {
+        slug: 'helix',
         label: 'Избранные работы',
         viewAll: 'Все проекты',
         eyebrow: 'Избранная система / 01',
@@ -85,7 +91,7 @@ export const ru: I18n = {
           {
             icon: 'lucide:chart-no-axes-combined',
             label: 'Визуализация',
-            items: ['Three.js', 'Leaflet', 'D3'],
+            items: ['Three.js', 'Leaflet', 'D3', 'Chart.js'],
           },
           {
             icon: 'lucide:smartphone',
@@ -97,11 +103,14 @@ export const ru: I18n = {
             label: 'Инструменты и delivery',
             items: [
               'Node.js',
+              'Webpack',
               'Vite',
               'Git',
               'GitHub Actions',
               'Cypress',
+              'Playwright',
               'AWS',
+              'Azure',
               'CI/CD',
             ],
           },
@@ -109,8 +118,7 @@ export const ru: I18n = {
       },
       approach: {
         label: 'Как я работаю',
-        title:
-          'Сложность заслуживает спокойного интерфейса и спокойного процесса поставки.',
+        title: 'Я привношу ясность в сложную фронтенд-разработку.',
         description:
           'Мне нравится решать сложные задачи и превращать идеи в надёжные продукты, которыми пользуются люди.',
         cta: 'Связаться со мной',

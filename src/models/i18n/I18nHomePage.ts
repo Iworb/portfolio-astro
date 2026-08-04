@@ -16,8 +16,9 @@ export interface I18nHomePage {
       location: string;
       note: string;
   };
-  resume: { label: string; years: string; download: string };
+  resume: { label: string; years: string; details: string; download: string };
   featuredWork: {
+    slug: string;
       label: string;
       viewAll: string;
       eyebrow: string;
