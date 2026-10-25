@@ -8,7 +8,6 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://iworb.github.io',
-  base: '/portfolio-astro',
   integrations: [icon(), preact()],
   vite: {
     plugins: [tailwindcss()],
