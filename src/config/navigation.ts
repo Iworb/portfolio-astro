@@ -3,25 +3,27 @@ export interface NavigationItem {
   href: string;
 }
 
+const base = import.meta.env.BASE_URL;
+
 export const navigation: NavigationItem[] = [
   {
     label: 'Work',
-    href: '/work',
+    href: `${base}/work`,
   },
   {
     label: 'Experience',
-    href: '/experience',
+    href: `${base}/experience`,
   },
   {
     label: 'About',
-    href: '/about',
+    href: `${base}/about`,
   },
   {
     label: 'Blog',
-    href: '/blog',
+    href: `${base}/blog`,
   },
   {
     label: 'Contact',
-    href: '/contact',
+    href: `${base}/contact`,
   },
 ];

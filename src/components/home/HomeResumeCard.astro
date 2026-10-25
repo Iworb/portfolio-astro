@@ -7,6 +7,7 @@ interface Props {
 
 const { i18n } = Astro.props;
 const resume = i18n.pages.home.resume;
+const base = import.meta.env.BASE_URL;
 ---
 
 <section
@@ -27,7 +28,7 @@ const resume = i18n.pages.home.resume;
       </h2>
     </div>
     <a
-       href={i18n.pages.home.hero.cvLink}
+       href={`${base}/${i18n.pages.home.hero.cvLink}`}
       download
       class="btn btn-neutral min-h-11 w-fit rounded-[10px] px-4 text-sm font-normal">
        {resume.download} <span aria-hidden="true">↓</span>

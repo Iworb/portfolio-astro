@@ -8,6 +8,8 @@ interface Props {
 }
 
 const { i18n, locale } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
 ---
 
 <div class="drawer drawer-end md:hidden">
@@ -23,7 +25,7 @@ const { i18n, locale } = Astro.props;
     <aside class="min-h-full w-80 max-w-[85vw] bg-base-100 p-5">
       <div class="mb-8 flex items-center justify-between">
         <a
-          href={`/${locale}`}
+          href={`${base}/${locale}`}
           class="font-sans text-lg font-extrabold tracking-[-0.06em]"
           aria-label={i18n.meta.title}>{i18n.nav.header.name}</a
         >
@@ -38,23 +40,23 @@ const { i18n, locale } = Astro.props;
       <nav aria-label={i18n.nav.header.work}>
         <ul class="menu w-full gap-2 p-0">
           <li>
-            <a href={`/${locale}/work`} class="min-h-12 rounded-xl text-base"
+            <a href={`${base}/${locale}/work`} class="min-h-12 rounded-xl text-base"
               >{i18n.nav.header.work}</a
             >
           </li>
           <li>
             <a
-              href={`/${locale}/experience`}
+              href={`${base}/${locale}/experience`}
               class="min-h-12 rounded-xl text-base">{i18n.nav.header.experience}</a
             >
           </li>
           <li>
-            <a href={`/${locale}/about`} class="min-h-12 rounded-xl text-base"
+            <a href={`${base}/${locale}/about`} class="min-h-12 rounded-xl text-base"
               >{i18n.nav.header.about}</a
             >
           </li>
           <li>
-            <a href={`/${locale}/contact`} class="min-h-12 rounded-xl text-base"
+            <a href={`${base}/${locale}/contact`} class="min-h-12 rounded-xl text-base"
               >{i18n.nav.header.contact}</a
             >
           </li>
@@ -63,7 +65,7 @@ const { i18n, locale } = Astro.props;
 
       <div class="mt-8 border-t border-base-300 pt-6">
         <p class="mb-3 text-sm text-base-content/60">{i18n.nav.header.available}</p>
-        <a href={`/${locale}/contact`} class="btn btn-primary w-full"
+        <a href={`${base}/${locale}/contact`} class="btn btn-primary w-full"
           >{i18n.nav.header.cta}</a
         >
       </div>

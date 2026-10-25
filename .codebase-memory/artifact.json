@@ -1,11 +1,11 @@
 {
     "schema_version": 2,
-    "commit": "0351a14ecba483a7d340b0724fa63f238779ab67",
-    "indexed_at": "2026-08-04T22:14:42Z",
-    "project": "portfolio-astro",
-    "nodes": 514,
-    "edges": 645,
-    "original_size": 1310720,
-    "compressed_size": 81440,
-    "compression_level": 9
+    "commit": "f1ca0b9d7e2582e96188971ebeded254039fd97c",
+    "indexed_at": "2026-10-25T12:29:41Z",
+    "project": "F-hobby-coding-portfolio-astro",
+    "nodes": 523,
+    "edges": 657,
+    "original_size": 1900544,
+    "compressed_size": 116689,
+    "compression_level": 3
 }

@@ -9,6 +9,8 @@ interface Props {
 
 const { i18n, locale } = Astro.props;
 const hero = i18n.pages.home.hero;
+const base = import.meta.env.BASE_URL;
+
 ---
 
 <section
@@ -31,13 +33,13 @@ const hero = i18n.pages.home.hero;
 
     <div class="flex flex-col gap-3 sm:flex-row">
       <a
-        href={hero.cvLink}
+        href={`${base}/${hero.cvLink}`}
         download
         class="btn btn-primary min-h-11 rounded-[10px] px-5 text-sm font-normal">
         {hero.downloadCv}<span aria-hidden="true">↓</span>
       </a>
       <a
-        href={`/${locale}/contact`}
+        href={`${base}/${locale}/contact`}
         class="btn btn-outline min-h-11 rounded-[10px] border-base-content px-5 text-sm font-normal text-base-content hover:border-base-content hover:bg-base-content hover:text-base-100">
         {hero.cta}<span aria-hidden="true">↗</span>
       </a>

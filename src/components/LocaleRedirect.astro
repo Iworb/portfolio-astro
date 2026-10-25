@@ -1,8 +1,9 @@
 ---
 const fallbackLocale = 'en';
+const base = import.meta.env.BASE_URL;
 ---
 
-<script is:inline>
+<script is:inline define:vars={{ base }}>
   const supportedLocales = ['en', 'de', 'ru', 'ua'];
   const browserLocales = navigator.languages?.length
     ? navigator.languages
@@ -13,12 +14,19 @@ const fallbackLocale = 'en';
     .map(language => (language === 'uk' ? 'ua' : language))
     .find(language => supportedLocales.includes(language)) ?? 'en';
 
-  const path = window.location.pathname.replace(/^\/+/, '');
-  const destination = `/${locale}${path ? `/${path}` : ''}${window.location.search}${window.location.hash}`;
+  const basePath = base === '/' ? '' : base.replace(/\/+$/, '');
+  const pathname = window.location.pathname;
+  const path = pathname.startsWith(`${basePath}/`)
+    ? pathname.slice(basePath.length)
+    : pathname === basePath
+      ? ''
+      : pathname;
+  const route = path.replace(/^\/+/, '');
+  const destination = `${basePath}/${locale}${route ? `/${route}` : ''}${window.location.search}${window.location.hash}`;
 
   window.location.replace(destination);
 </script>
 
 <noscript>
-  <meta http-equiv="refresh" content={`0;url=/${fallbackLocale}`} />
+  <meta http-equiv="refresh" content={`0;url=${base}/${fallbackLocale}`} />
 </noscript>

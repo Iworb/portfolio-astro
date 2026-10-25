@@ -7,10 +7,11 @@ interface Props {
 }
 
 const { project, locale } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <a
-  href={`/${locale}/work/${project.slug}`}
+  href={`${base}/${locale}/work/${project.slug}`}
   class:list={[
     'work-card group relative flex min-w-0 w-full aspect-[16/9] flex-col overflow-hidden no-underline transition-[border-color,background-color] duration-200 hover:border-base-content/50',
     project.featured && 'work-card-featured',

@@ -17,8 +17,8 @@ const project = work.projects.find(item => item.slug === slug);
 if (!project) {
   throw new Error(`Unknown work system: ${slug}`);
 }
-
-const workPath = `/${locale}/work`;
+const base = import.meta.env.BASE_URL;
+const workPath = `${base}/${locale}/work`;
 const technologyGroups = project.technologies ?? [
   {category: work.detail.technologyStack, items: project.tags.map(name => ({name, description: ''}))},
 ];
@@ -162,7 +162,7 @@ const categoryIcons: Record<string, string> = {
         {
           project.brochure?.label && project.brochure.url && (
             <a
-              href={project.brochure.url}
+              href={`${base}/${project.brochure.url}`}
               target="_blank"
               rel="noreferrer"
               class="mt-8 inline-flex items-center gap-2 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.08em] text-accent underline underline-offset-4 transition-colors hover:text-base-content">

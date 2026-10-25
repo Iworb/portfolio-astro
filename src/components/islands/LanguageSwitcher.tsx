@@ -9,6 +9,8 @@ interface Props {
   pathSuffix?: string;
 }
 
+const base = import.meta.env.BASE_URL;
+
 export default function LanguageSwitcher({
   chevron,
   locale,
@@ -32,22 +34,22 @@ export default function LanguageSwitcher({
         tabIndex={0}
         className="menu dropdown-content z-50 mt-2 w-40 rounded-box border border-base-300 bg-base-100 p-1.5 font-mono text-[0.6875rem] font-medium tracking-[0.05em] shadow-none">
         <li>
-          <a href={`/en${pathSuffix}`} className="rounded-lg px-3 py-2.5">
+          <a href={`${base}/en${pathSuffix}`} className="rounded-lg px-3 py-2.5">
             {i18n.nav.header.language.en}
           </a>
         </li>
         <li>
-          <a href={`/de${pathSuffix}`} className="rounded-lg px-3 py-2.5">
+          <a href={`${base}/de${pathSuffix}`} className="rounded-lg px-3 py-2.5">
             {i18n.nav.header.language.de}
           </a>
         </li>
         <li>
-          <a href={`/ru${pathSuffix}`} className="rounded-lg px-3 py-2.5">
+          <a href={`${base}/ru${pathSuffix}`} className="rounded-lg px-3 py-2.5">
             {i18n.nav.header.language.ru}
           </a>
         </li>
         <li>
-          <a href={`/ua${pathSuffix}`} className="rounded-lg px-3 py-2.5">
+          <a href={`${base}/ua${pathSuffix}`} className="rounded-lg px-3 py-2.5">
             {i18n.nav.header.language.ua}
           </a>
         </li>
