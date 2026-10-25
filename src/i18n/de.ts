@@ -448,45 +448,47 @@ export const de: I18n = {
     },
     experience: {
       hero: {
-        eyebrow: 'Erfahrung / Arbeitsmodell',
-        title: 'Wie ich arbeite, wenn das System schwierig wird.',
+        eyebrow: 'Berufserfahrung / 02.2015—heute',
+        title: 'Senior-Frontend-Entwicklung mit Architekturverantwortung.',
         description:
-          'Keine Projektliste, sondern ein Blick auf Verantwortung, Entscheidungen und Arbeitskontext hinter dem Portfolio.',
+          'Selbstständiger Senior Frontend Developer und Architect für internationale B2B-Kunden aus den USA, Australien und der Ukraine — seit 04/2023 remote aus Deutschland tätig.',
       },
       practice: {
-        label: 'Kontinuierliche Praxis',
+        label: 'Kontinuierliche selbstständige Praxis',
         description:
-          'Selbstständige Frontend-Praxis seit 02/2015: mehr als 11 Jahre Webentwicklung und rund 8 Jahre Angular-/AngularJS-Architektur für internationale B2B-Kunden.',
+          'Mehr als 11 Jahre Webentwicklung, davon rund 8 Jahre in der Konzeption und Weiterentwicklung großer Angular- und AngularJS-Frontends. Die Arbeit umfasst Retail, Budget- und Beschaffungsplanung, industrielles IoT-Monitoring, Bergbau und E-Learning — von der technischen Analyse und Architektur bis zu Implementierung, Tests und Auslieferung.',
       },
       areas: [
         {
-          title: 'Architektur',
+          title: 'Frontend-Architektur',
           description:
-            'Komplexen Frontends eine Struktur geben, die Veränderungen trägt.',
+            'Microfrontend- und Microapp-Umgebungen mit Shells und Shared Libraries konzipieren, Legacy-Monolithen nach Domänen zerlegen und große Angular-Migrationen planen, damit Anwendungen unabhängig weiterentwickelt und ausgeliefert werden können.',
         },
         {
-          title: 'Daten & Interface',
-          description: 'Anspruchsvolle Informationen im Client nutzbar machen.',
-        },
-        {
-          title: 'Delivery',
+          title: 'Komplexe Client-Anwendungen',
           description:
-            'Entscheidungen durch Implementierung und Release verantworten.',
+            'Daten- und rechenintensive Oberflächen entwickeln: hierarchische Tabellen, voneinander abhängige clientseitige Berechnungen, kartenbasierte Workflows sowie 2D-/3D-Visualisierungen. Performance, Rückmeldung und Wiederherstellung werden mitgedacht, wenn Nutzerkonfigurationen zu anspruchsvoll werden.',
         },
         {
-          title: 'Zusammenarbeit',
-          description: 'Technische Arbeit in kleinen Teams koordinieren.',
+          title: 'Technische End-to-End-Verantwortung',
+          description:
+            'Verantwortung vom Klären einer Business-Anforderung und der Werkzeugauswahl über die Implementierung mit Angular und TypeScript, API-Integration und Tests bis zur Mitarbeit an CI/CD übernehmen. Kernstack: Angular, RxJS und NgRx; je nach Umfeld ergänzt durch Docker, TeamCity oder Azure CI/CD.',
+        },
+        {
+          title: 'Technische Zusammenarbeit',
+          description:
+            'Technische Arbeit in Teams von bis zu drei Entwicklern koordinieren, Verbesserungen strukturieren und verteilen sowie je nach Rolle direkt mit Kunden oder angrenzenden Entwicklungsteams zusammenarbeiten.',
         },
       ],
       posture: {
-        label: 'Technische Haltung',
+        label: 'Arbeitsprinzip',
         description:
-          'Architektur ist nur nützlich, wenn sie die nächste Veränderung sicherer macht.',
+          'Ich verbinde praktische Frontend-Entwicklung mit architektonischer Orientierung. Es geht nicht um Architektur als Selbstzweck, sondern um Systeme, die verständlich, zuverlässig und sicher veränderbar bleiben, wenn sich Produkt, Team und Framework weiterentwickeln.',
       },
       chronology: {
-        label: 'Vollständiger Werdegang',
+        label: 'Beruflicher Werdegang',
         description:
-          'Der Lebenslauf enthält Daten, Ausbildung und den vollständigen beruflichen Werdegang.',
+          'Selbstständiger Senior Frontend Developer und Architect, 02/2015—heute. Der Lebenslauf enthält die vollständige Chronologie, Ausbildung und einen Technologieüberblick.',
       },
     },
     contact: {

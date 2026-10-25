@@ -454,44 +454,47 @@ export const en: I18n = {
     },
     experience: {
       hero: {
-        eyebrow: 'Experience / operating model',
-        title: 'How I work when the system is difficult.',
+        eyebrow: 'Professional experience / 02.2015—now',
+        title: 'Senior frontend development with architectural responsibility.',
         description:
-          'Not a list of projects. A view of the responsibility, decisions and working context behind the portfolio.',
+          'Freelance Senior Frontend Developer and Architect for international B2B clients in the US, Australia and Ukraine — working remotely from Germany since 04/2023.',
       },
       practice: {
-        label: 'Continuous practice',
+        label: 'Continuous independent practice',
         description:
-          'Independent frontend practice since 02/2015: more than 11 years in web development and around 8 years of Angular/AngularJS architecture for international B2B clients.',
+          'More than 11 years in web development, including around 8 years designing and evolving large Angular and AngularJS frontends. My work spans retail, budget and procurement planning, industrial IoT monitoring, mining and e-learning — from technical discovery and architecture to implementation, testing and delivery.',
       },
       areas: [
         {
-          title: 'Architecture',
+          title: 'Frontend architecture',
           description:
-            'Give complex frontends a structure that supports change.',
+            'Design microfrontend and microapp ecosystems with shells and shared libraries; decompose legacy monoliths by domain; and plan major Angular migrations so applications can evolve and be released independently.',
         },
         {
-          title: 'Data & interface',
-          description: 'Make demanding information usable on the client.',
+          title: 'Complex client applications',
+          description:
+            'Build data- and computation-intensive interfaces: hierarchical tables, interdependent client-side calculations, map-based workflows, and 2D/3D visualisation. Design for practical performance, feedback and recovery when user configurations become too demanding.',
         },
         {
-          title: 'Delivery',
-          description: 'Own choices through implementation and release.',
+          title: 'End-to-end technical delivery',
+          description:
+            'Take responsibility from clarifying a business need and selecting tools through Angular and TypeScript implementation, API integration, test coverage and contribution to CI/CD. Use Angular, RxJS and NgRx as the core stack, supported by Docker, TeamCity or Azure CI/CD where relevant.',
         },
         {
-          title: 'Collaboration',
-          description: 'Coordinate technical work in small teams.',
+          title: 'Technical collaboration',
+          description:
+            'Coordinate technical work in teams of up to three developers, break down and distribute improvement work, and collaborate directly with clients or adjacent engineering teams where the role requires it.',
         },
       ],
       posture: {
-        label: 'Technical posture',
+        label: 'Working principle',
         description:
-          'Architecture is useful only when it makes the next change safer.',
+          'I balance hands-on frontend delivery with architectural direction. The goal is not architecture for its own sake, but systems that remain understandable, reliable and safe to change as products, teams and frameworks evolve.',
       },
       chronology: {
-        label: 'Full chronology',
+        label: 'Career timeline',
         description:
-          'The CV holds dates, education and the complete professional record.',
+          'Freelance Senior Frontend Developer and Architect, 02/2015—present. The CV includes the full chronology, education and a complete technology overview.',
       },
     },
     contact: {
